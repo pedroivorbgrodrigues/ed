@@ -41,7 +41,7 @@ public:
 		return m_topo;
 	}
 
-	T RemoveDado()
+	virtual T RemoveDado()
 	{
 		if(EstruturaVazia())
 			throw std::underflow_error("Estrutura Vazia!");
@@ -81,7 +81,7 @@ public:
 		}
 	}
 
-private:
+protected:
 	T m_dados[MAXPILHA];
 	int m_topo;
 };

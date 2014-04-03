@@ -92,6 +92,8 @@ void menuRecursivo(EstruturaLinear<T>* estutura)//char is 1, number is 2
 				{
 					cout << "Erro: pilha cheia." << endl;
 				}
+				cout << std::endl << std::endl;
+				menuRecursivo(estutura);
 				
 			}	
 		break;
@@ -108,40 +110,51 @@ void menuRecursivo(EstruturaLinear<T>* estutura)//char is 1, number is 2
 				{
 					cout << "Erro: pilha vazia." << endl;
 				}
+
+				cout << std::endl << std::endl;
+				menuRecursivo(estutura);
 			}
 		break;
 		case 3:
-			estutura->InicializaEstrutura();
-			cout << "Pilha limpa." << endl;
+			{
+				estutura->InicializaEstrutura();
+				cout << "Pilha limpa." << endl;
+
+				cout << std::endl << std::endl;
+				menuRecursivo(estutura);
+			}
+			
 		break;
 		case 4:
-			try
 			{
-				cout << "Posição Valor" << endl;
-				T vetor[MAXPILHA];
-				estutura->CopiarVetor(vetor);
-				int indiceTopo = estutura->ObterIndiceTopo();
-				for (int i = 0; i <= indiceTopo; i++)
+				try
 				{
-					if (TIPO_DADO == 2)
-						printf("%i %i\n", i, vetor[i]);
-					else cout << i << "   " << vetor[i];
+					cout << "Posição Valor" << endl;
+					T vetor[MAXPILHA];
+					estutura->CopiarVetor(vetor);
+					int indiceTopo = estutura->ObterIndiceTopo();
+					for (int i = 0; i <= indiceTopo; i++)
+					{
+						if (TIPO_DADO == 2)
+							printf("%i %i\n", i, vetor[i]);
+						else cout << i << "   " << vetor[i];
+					}
+					//estutura->ImprimirVetor();
 				}
-				//estutura->ImprimirVetor();
-			}
-			catch (underflow_error& e)
-			{
-				cout << "Erro: pilha vazia." << endl;
+				catch (underflow_error& e)
+				{
+					cout << "Erro: pilha vazia." << endl;
+				}
+				cout << std::endl << std::endl;
+				menuRecursivo(estutura);
 			}
 		break;
 		case 5:
-			return;
+			break;
 		default:
 			cout << std::endl << "Entrada invalida, digite um numero entre 1 e 5!" << std::endl;
 		break;
-	}
-	cout << std::endl << std::endl;
-	return menuRecursivo(estutura);
+	}	
 }
 int _tmain(int argc, _TCHAR* argv[])
 {
