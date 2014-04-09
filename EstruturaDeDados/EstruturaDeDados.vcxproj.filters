@@ -33,12 +33,27 @@
     <ClInclude Include="ElementoDaFila.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ListaContabil.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Lancamento.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="EstruturaDeDados.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="trabalho3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ListaContabil.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Lancamento.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
