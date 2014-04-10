@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include <iostream>
 #include <cstdlib>
 #include <cstdio>
@@ -20,8 +21,7 @@ void listarTran() {
 		printf("Lista vazia! Impossível imprimir\n");
 	else {
 		for (int i = 0; i <= listaAtual->ObterIndiceTopo(); i++) {
-			printf("(%i) %s %.2f\n", i, ((*listaAtual).mostra(i).nome()),
-					(*listaAtual).mostra(i).valor());
+			cout << i << " " << listaAtual->ObterLancamentoPelaPosicao(i);
 		}
 	}
 }
@@ -41,7 +41,7 @@ void remTran() {
 		getchar();
 		switch (opcao) {
 		case 't':
-			listaAtual->destroiLista();
+			listaAtual->InicializaEstrutura();
 			printf("Lista destruída!");
 		   sair = true;
 			break;
@@ -51,17 +51,21 @@ void remTran() {
 				getline(cin, input);
 				stringstream myStream(input);
 				if (myStream >> valor)
-					if (valor >= 0 && valor <= listaAtual->verUltimo())
+					if (valor >= 0 && valor <= listaAtual->ObterIndiceTopo())
 						break;
-				printf(
-						"Número inválido... Entre com um"
+				printf(						"Número inválido... Entre com um"
 								" número válido, inteiro, maior ou igual a 0 e menor ou igual a %i !\n",
-						listaAtual->verUltimo());
+						listaAtual->ObterIndiceTopo());
 			}
-			if (listaAtual->retiraDaPosicao(valor) == ERROPOSICAOLAN)
-				printf("Se você chegou aqui o progamador é um burro!");
-			else
+			try
+			{
+				listaAtual->RetiraDaPosicao(valor);
 				printf("Lancamento removido com sucesso!\n");
+			}
+			catch (invalid_argument& e)
+			{
+				printf("Se você chegou aqui o progamador é um burro!");
+			}
 			sair = true;
 			break;
 		case 's':
@@ -100,22 +104,26 @@ void lancarTran() {
    tem que ser tratado no construtor do lançamento para ocupar o menor
    espaço em memoria possivel. Isso vale 1 ponto na nota do trabalho!
    */
-	Lancamento lan = Lancamento((char *)nome.c_str(), valor);
-	if (listaAtual->adiciona(lan) == ERROLISTACHEIA) {
-		printf("Impossível adicionar nova transação! Erro de lista cheia!");
-
-	} else
+	Lancamento lan = Lancamento(nome, valor);
+	try
+	{
+		listaAtual->AdicionaDado(lan);
 		printf("Lancamento adicionado com sucesso!");
 	}
+	catch (overflow_error& e)
+	{
+		printf("Impossível adicionar nova transação! Erro de lista cheia!");
+	}
+}
 
 void mostraSaldo() {
 	double tCredito = 0;
 	double tDebito = 0;
 
-	for (int i = 0; i <= listaCredito.verUltimo(); i++)
-		tCredito += listaCredito.verTrasacao(i).valor();
-	for (int i = 0; i <= listaDebito.verUltimo(); i++)
-		tDebito += listaDebito.verTrasacao(i).valor();
+	for (int i = 0; i <= listaCredito.ObterIndiceTopo(); i++)
+		tCredito += listaCredito.ObterLancamentoPelaPosicao(i).Valor();
+	for (int i = 0; i <= listaDebito.ObterIndiceTopo(); i++)
+		tDebito += listaDebito.ObterLancamentoPelaPosicao(i).Valor();
 
 	printf("\nTotal (Créditos - Débitos): \n     %.2f", tCredito - tDebito);
 }
@@ -134,7 +142,7 @@ int main() {
 				"(r) Remover Transações\n"
 				"(s) Mostar Saldo (total créditos - total de débitos)\n"
 				"(q) Sair do Programa\n"
-				"\nLista atual: %s \n%s", listaAtualTexto.c_str(),
+				"\nLista atual: %s \n%s\n", listaAtualTexto.c_str(),
 				mensagem.c_str());
 
 		opcao = getchar();

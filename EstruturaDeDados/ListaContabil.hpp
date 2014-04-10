@@ -13,6 +13,11 @@ public:
 
 	}
 
+	T ObterLancamentoPelaPosicao(int i)
+	{
+		return m_dados[i];
+	}
+
 	int AdicionaNoInicio(T dado)
 	{
 		if(this->EstruturaCheia())
