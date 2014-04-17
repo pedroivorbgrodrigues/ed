@@ -4,7 +4,7 @@ template<class T>
 class ListaContabil : public EstruturaLinear<T>
 {
 public:
-	ListaContabil(void) : EstruturaLinear()
+	ListaContabil(void) : EstruturaLinear<T>()
 	{
 
 	}
@@ -13,22 +13,18 @@ public:
 
 	}
 
-	T ObterLancamentoPelaPosicao(int i)
+	T ObterDadoPelaPosicao(int i)
 	{
-		return m_dados[i];
+		return this->m_dados[i];
 	}
 
 	int AdicionaNoInicio(T dado)
 	{
 		if(this->EstruturaCheia())
 			throw std::overflow_error("Estrutura Cheia!");
-		m_topo++;
-		int posicao = m_topo;
-		while (posicao > 0)
-		{
-			m_dados[posicao] = m_dados[posicao-1];
-			posicao--;
-		}
+		this->m_topo++;
+		DeslocarTodosParaDireita(0);
+		this->m_dados[0] = dado;
 		return 0;
 	}
 
@@ -38,13 +34,9 @@ public:
 			throw std::underflow_error("Estrutura Vazia!");
 		int posicao = 0;
 		T valor;
-		m_topo--;
-		valor = m_dados[0];
-		while(posicao <= m_topo)
-		{
-			m_dados[posicao] = m_dados[posicao+1];
-			posicao++;
-		}
+		this->m_topo--;
+		valor = this->m_dados[0];
+		DeslocarTodosParaEsquerda(0);
 		return valor;
 	}
 
@@ -52,32 +44,38 @@ public:
 	{
 		if(this->EstruturaCheia())
 			throw std::overflow_error("Estrutura Cheia!");
-		if (destino > m_topo +1 || destino < 0)
+		if (destino > this->m_topo +1 || destino < 0)
 			throw std::invalid_argument("Posicao invalida");
-		int posicao = m_topo;
-		while(posicao > destino)
-		{
-			m_dados[posicao] = m_dados[posicao-1];
-			posicao--;
-		}
-		m_dados[destino] = dado;
+		this->m_topo++;
+		DeslocarTodosParaDireita(destino);
+		this->m_dados[destino] = dado;
 		return destino;
 	}
 
+	/*
+	int AdicionaEmOrdem(T dado)
+	{
+		if(this->EstruturaCheia())
+			throw std::overflow_error("Estrutura Cheia!");
+		int posicao = 0;
+		while(posicao <= this->m_topo && dado > this->m_dados[posicao])
+		{
+			posicao++;
+		}
+		return AdicionaNaPosicao(dado,posicao);
+
+	}
+	*/
+
 	T RetiraDaPosicao(int fonte)
 	{
-		if (fonte > m_topo || fonte < 0)
+		if (fonte > this->m_topo || fonte < 0)
 			throw std::invalid_argument("Posicao invalida");
 		if(this->EstruturaVazia())
 			throw std::underflow_error("Estrutura Vazia!");
-		m_topo--;
-		int posicao = fonte;
-		T valor = m_dados[fonte];
-		while (posicao <= m_topo)
-		{
-			m_dados[posicao] = m_dados[posicao+1];
-			posicao++;
-		}
+		this->m_topo--;
+		T valor = this->m_dados[fonte];
+		DeslocarTodosParaEsquerda(fonte);
 		return valor;
 	}
 
@@ -91,7 +89,7 @@ public:
 		if(this->EstruturaCheia())
 			throw std::overflow_error("Estrutura Cheia!");
 		int posicao = 0;
-		while(posicao <= m_topo && maior(dado, m_dados[posicao]))
+		while(posicao <= this->m_topo && maior(dado,this-> m_dados[posicao]))
 		{
 			posicao++;
 		}
@@ -101,11 +99,11 @@ public:
 	int Posicao(T dado)
 	{
 		int posicao = 0;
-		while(posicao <= m_topo && dado != m_dados[posicao])
+		while(posicao <= this->m_topo && dado != this->m_dados[posicao])
 		{
 			posicao++;
 		}
-		if (posicao > m_topo)
+		if (posicao > this->m_topo)
 			return -1;
 		return posicao;
 	}
@@ -116,9 +114,30 @@ public:
 			throw std::underflow_error("Estrutura Vazia!");
 		int posicao = Posicao(dado);
 		if (posicao < 0)
-			throw std::invalid_argument("Posicao invalida");
+			throw std::invalid_argument("Elemento inexistente!");
 		return RetiraDaPosicao(posicao);
 	}
+
+	private:
+		void DeslocarTodosParaEsquerda(int inicio)
+		{
+			int posicao = inicio;
+			while (posicao <= this->m_topo)
+			{
+				this->m_dados[posicao] = this->m_dados[posicao+1];
+				posicao++;
+			}
+		}
+
+		void DeslocarTodosParaDireita(int inicio)
+		{
+			int posicao = this->m_topo;
+			while(posicao > inicio)
+			{
+				this->m_dados[posicao] = this->m_dados[posicao-1];
+				posicao--;
+			}
+		}
 
 };
 

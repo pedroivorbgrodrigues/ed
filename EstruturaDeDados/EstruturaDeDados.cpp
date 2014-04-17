@@ -131,7 +131,7 @@ namespace trab12
 					try
 					{
 						cout << "Posição Valor" << endl;
-						T vetor[MAXPILHA];
+						T vetor[MAXLISTA];
 						estutura->CopiarVetor(vetor);
 						int indiceTopo = estutura->ObterIndiceTopo();
 						for (int i = 0; i <= indiceTopo; i++)

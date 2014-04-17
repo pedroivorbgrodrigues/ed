@@ -47,10 +47,13 @@
     <ClCompile Include="EstruturaDeDados.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="trabalho3.cpp">
+    <ClCompile Include="Lancamento.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Lancamento.cpp">
+    <ClCompile Include="Trabalho03.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="trab04.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -3,7 +3,7 @@
 #include <string>
 #include <stdio.h>
 
-#define MAXPILHA  30
+#define MAXLISTA  10
 #define COD_ERRO_ESTRUTURA_CHEIA  -1
 #define COD_ERRO_ESTRUTURA_VAZIA  -2
 
@@ -24,7 +24,7 @@ public:
 
 	bool EstruturaCheia()
 	{
-		return m_topo == MAXPILHA-1;
+		return m_topo == MAXLISTA-1;
 	}
 
 	bool EstruturaVazia()
@@ -61,7 +61,7 @@ public:
 		return m_topo;
 	}
 
-	void CopiarVetor(T (&destino)[MAXPILHA])
+	void CopiarVetor(T (&destino)[MAXLISTA])
 	{
 		if(EstruturaVazia())
 			throw std::underflow_error("Estrutura Vazia!");
@@ -82,6 +82,6 @@ public:
 	}
 
 protected:
-	T m_dados[MAXPILHA];
+	T m_dados[MAXLISTA];
 	int m_topo;
 };

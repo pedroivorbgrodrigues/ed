@@ -1,5 +1,6 @@
-#include "StdAfx.h"
+#include "stdafx.h"
 #include "Lancamento.h"
+#include <cstring>
 
 Lancamento::Lancamento(void)
 {

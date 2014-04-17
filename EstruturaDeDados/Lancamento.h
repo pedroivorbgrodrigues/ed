@@ -12,7 +12,7 @@ public:
 	std::string Nome();
 	double Valor();
 
-	friend std::ostream &operator<<(std::ostream &out, Lancamento &ef)     //output
+	friend std::ostream &operator<<(std::ostream &out, Lancamento ef)     //output
 	{
 		out<<ef.nome<<" " << std::fixed << std::setprecision(2) << ef.valor << "\n";
 		return out;
