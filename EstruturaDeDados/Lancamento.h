@@ -18,6 +18,8 @@ public:
 		return out;
 	}
 
+	//sobreescrever os operadores de maior, e de igual para usar os metodos de adicionar em ordem e remover especifico
+
 private:
 	char* nome;
 	double valor;
