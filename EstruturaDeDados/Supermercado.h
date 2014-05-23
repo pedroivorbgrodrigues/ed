@@ -14,8 +14,9 @@ private:
 	ListaEncadeadaSimples<Caixa> m_listaDeCaixas;//AQUI É UMA LISTA CIRCULAR
 	int m_relogioInterno;//tipo ciclos
 	ListaEncadeadaSimples<Cliente> m_clientesDesistentes;
-	int tamanhoMaximoFilas;//se TODOS os caixas estiverem com a fila desse tamanho ou mais deve-se contratar um novo caixa pagando em dobro a hora
-
+	int m_tamanhoMaximoFilas;//se TODOS os caixas estiverem com a fila desse tamanho ou mais deve-se contratar um novo caixa pagando em dobro a hora
+	int m_tempoMedioEmSegundosDeChegadaDeNovosClientes;
+	int m_tempoTotalDeSimulacaoEmHoras;
 };
 /*
 Gerar valores aleatorios com distribuição uniforme no intervalo 0 a 1, utilize as funções rand e srand.

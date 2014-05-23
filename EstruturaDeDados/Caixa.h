@@ -1,5 +1,7 @@
 #pragma once
 #include "Cliente.h"
+#include "FilaEncadeada.hpp"
+#include <string>
 
 enum Eficiencia
 {
@@ -11,29 +13,28 @@ enum Eficiencia
 class Caixa
 {
 public:
-	Caixa(void);
-	~Caixa(void);
-	double FaturamentoMedio(){return m_clientesAtendidos == 0 ? 0 : m_faturamentoTotal/m_clientesAtendidos;}
-	double TempoMedioNaFila(){return m_clientesAtendidos == 0 ? 0 : m_tempoTotalDeClientesNaFila/m_clientesAtendidos;}
-	
+	Caixa(std::string identificador, int desempenho, int salario);
+	~Caixa();
+	void recebeCliente(Cliente *novo, int tempoAtual);
+	int atendeCliente(int tempoAtual);
+	int getNroClientes();
+	int getNroClientesAtendidos();
+	int getTempoEspera();
+	double getFaturamento();
+	double getFaturamentoMedio();
+	std::string getIdentificador();
+	int getDesempenho();
+	int getNroProdutos();
 private:
-	std::string identificador;
-	double salario;
-	ListaEncadeadaSimples<Cliente> m_filaDeClientes;
-	Eficiencia m_eficiencia;
+	FilaEncadeadaCircular<Cliente> *m_clientes;
+	int m_numeroDeClientesNaFila;
+	int m_numeroDeClientesAtendidos;
+	int m_tempoMedioDeEsperaDeUmClienteNaFila;
 	double m_faturamentoTotal;
-	int m_clientesAtendidos;
-	int m_tempoTotalDeClientesNaFila;
-	int tempoDePagamento(bool cheque)
-	{
-		if (!cheque)
-			return 0;
-		if (m_eficiencia == eficiente)
-			return 10;
-		else if (m_eficiencia == medio)
-			return 25;
-		else return 60;
-	}
+	double m_faturamentoMedio;
+	std::string m_identificador;
+	int m_eficiencia;
+	int m_salario;
 
 };
 
