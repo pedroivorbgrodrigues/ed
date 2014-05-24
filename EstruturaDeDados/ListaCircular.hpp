@@ -25,6 +25,7 @@ public:
 		T* volta;
 		if (this->tamanho == 1)
 			throw std::underflow_error("Lista vazia!");
+		tamanho--;
 		eliminar = this->sentinela->getAnterior();
 		anterior = eliminar->getAnterior();
 		this->sentinela->setAnterior(anterior);
@@ -88,7 +89,9 @@ public:
 			return retiraDoInicio();
 		if (posicao == this->tamanho)
 			return retiraDoFim();
-		switch (posicao > this->tamanho / 2) {
+		tamanho--;
+		switch (posicao > this->tamanho / 2) 
+		{
 		case true:
 			eliminar = obterProximoDecrescente(posicao);
 			anterior = eliminar->getAnterior();

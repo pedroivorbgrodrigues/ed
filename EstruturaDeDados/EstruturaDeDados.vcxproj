@@ -82,6 +82,7 @@
     <ClInclude Include="EstruturaLinear.hpp" />
     <ClInclude Include="Fila.hpp" />
     <ClInclude Include="FilaEncadeada.hpp" />
+    <ClInclude Include="GeradorRandomico.h" />
     <ClInclude Include="Lancamento.h" />
     <ClInclude Include="ListaCircular.hpp" />
     <ClInclude Include="ListaContabil.hpp" />

@@ -1,10 +1,9 @@
 #include "StdAfx.h"
 #include "Supermercado.h"
+#include "GeradorRandomico.h"
 #include <fstream>
 #include <iostream>
 #include <string>
-#include <stdlib.h>
-#include <ctime>
 #include <vector>
 
 Supermercado::Supermercado(std::string nomeDoSupermercado,	ListaCircular<std::string> *identificadoresDosCaixas, ListaCircular<Eficiencia> *eficienciaDosCaixas, 
@@ -127,56 +126,63 @@ void Supermercado::CalcularEstatisticas()
 
 void Supermercado::rodarSimulacao() 
 {
-	while (this->m_relogioInterno
-		< this->m_tempoTotalDeSimulacaoEmHoras * 60 * 60) {
-			bool precisaContratarNovoCaixa = true;
-			for (int i = 0; i < this->m_listaDeCaixas.obterTamanho(); i++) {
-				Caixa *atual;
-				Cliente *atendido;
-				atual = this->m_listaDeCaixas.retiraDoInicio();
-				atendido = atual->atendeCliente(this->m_relogioInterno);
-				this->m_listaDeCaixas.adicionaNoFim(atual);
-				if (atual->getNroClientes() < 10)
-					precisaContratarNovoCaixa = false;
-				if (atendido != NULL)
-					this->m_clientesAtendidos.adicionaNoFim(atendido);
+	while (this->m_relogioInterno < this->m_tempoTotalDeSimulacaoEmHoras * 60 * 60) 
+	{
+		bool precisaContratarNovoCaixa = true;
+		for (int i = 0; i < this->m_listaDeCaixas.obterTamanho(); i++) 
+		{
+			Caixa *atual;
+			Cliente *atendido;
+			atual = this->m_listaDeCaixas.retiraDoInicio();
+			atendido = atual->atendeCliente(this->m_relogioInterno);
+			this->m_listaDeCaixas.adicionaNoFim(atual);
+			if (atual->getNroClientes() < 10)
+				precisaContratarNovoCaixa = false;
+			if (atendido != NULL)
+				this->m_clientesAtendidos.adicionaNoFim(atendido);
+		}
+		if (precisaContratarNovoCaixa) 
+		{
+			int numeroEficiencia = (int) ((randomico() * 3) + 1);
+			Eficiencia eficiencia;
+			double salario;
+			switch (numeroEficiencia) 
+			{
+			case 1:
+				eficiencia = eficiente;
+				salario = 800;
+				break;
+			case 2:
+				eficiencia = medio;
+				salario = 540;
+				break;
+			case 3:
+				eficiencia = ruim;
+				salario = 180;
+				break;
 			}
-			if (precisaContratarNovoCaixa) {
-				srand(time(NULL));
-				int numeroEficiencia = (int) (((rand() / RAND_MAX) * 3) + 1);
-				Eficiencia eficiencia;
-				double salario;
-				switch (numeroEficiencia) {
-				case 1:
-					eficiencia = eficiente;
-					salario = 800;
-					break;
-				case 2:
-					eficiencia = medio;
-					salario = 540;
-					break;
-				case 3:
-					eficiencia = ruim;
-					salario = 180;
-					break;
-				}
-				Caixa *novo = new Caixa("Extra", eficiencia, salario, true,
-					this->m_relogioInterno);
-				this->m_listaDeCaixas.adicionaNoFim(novo);
-			}
-			if (this->m_relogioInterno == this->m_tempoDeChegadaDoProximoCliente) {
-				this->gerarCliente(precisaContratarNovoCaixa);
-			}
-			this->m_relogioInterno += 1;
+			Caixa *novo = new Caixa("Extra", eficiencia, salario, true, this->m_relogioInterno);
+			this->m_listaDeCaixas.adicionaNoFim(novo);
+		}
+
+		if (this->m_relogioInterno == this->m_tempoDeChegadaDoProximoCliente) 
+		{
+			this->gerarCliente(precisaContratarNovoCaixa);
+		}
+		this->m_relogioInterno += 1;
 	}
 	CalcularEstatisticas();
 }
-void Supermercado::gerarCliente(bool caixasCheios) {
+
+void Supermercado::gerarCliente(bool caixasCheios) 
+{
 	Cliente *novo = new Cliente(this->m_relogioInterno);
-	if (caixasCheios) {
+	if (caixasCheios) 
 		this->m_clientesDesistentes.adicionaNoFim(novo);
-	} else {
-		switch (novo->getTipoCliente()) {
+	else 
+	{
+		switch (novo->getTipoCliente()) 
+		{
 		case buscaMenorFila:
 			buscarMenorFila(novo);
 			break;
@@ -185,12 +191,8 @@ void Supermercado::gerarCliente(bool caixasCheios) {
 			break;
 		}
 	}
-	srand(time(NULL));
-	int intervalo = (int) (((rand() / RAND_MAX)
-		* this->m_tempoMedioEmSegundosDeChegadaDeNovosClientes)
-		- (this->m_tempoMedioEmSegundosDeChegadaDeNovosClientes / 2));
-	this->m_tempoDeChegadaDoProximoCliente =
-		this->m_tempoMedioEmSegundosDeChegadaDeNovosClientes + intervalo;
+	int intervalo = (int) ((randomico() * this->m_tempoMedioEmSegundosDeChegadaDeNovosClientes) - (this->m_tempoMedioEmSegundosDeChegadaDeNovosClientes / 2));
+	this->m_tempoDeChegadaDoProximoCliente = this->m_tempoMedioEmSegundosDeChegadaDeNovosClientes + intervalo;
 }
 void Supermercado::buscarMenorFila(Cliente *novo) {
 	Caixa *escolhido, *teste;

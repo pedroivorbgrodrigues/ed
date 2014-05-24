@@ -51,6 +51,7 @@ public:
 		T* volta;
 		if (this->tamanho == 1)
 			throw std::underflow_error("Lista vazia!");
+		tamanho--;
 		eliminar = this->sentinela->getProximo();
 		proximo = eliminar->getProximo();
 		this->sentinela->setProximo(proximo);
