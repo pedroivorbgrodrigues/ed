@@ -37,6 +37,10 @@ std::vector<std::string> splitString(std::string original, char delimitador)
 
 Supermercado::Supermercado(std::string caminhoParaArquivo)
 {
+	this->m_relogioInterno = 0;
+	this->m_tamanhoMaximoFilas = 10;
+	this->m_tempoDeChegadaDoProximoCliente = 0;
+
 	std::string linha;
 	std::ifstream arquivo(caminhoParaArquivo);
 	std::vector<std::string> linhasArquivo;
@@ -121,7 +125,8 @@ void Supermercado::CalcularEstatisticas()
 	cout << "Faturamento perdido: " << faturamentoPerdido * 3;
 }
 
-void Supermercado::rodarSimulacao() {
+void Supermercado::rodarSimulacao() 
+{
 	while (this->m_relogioInterno
 		< this->m_tempoTotalDeSimulacaoEmHoras * 60 * 60) {
 			bool precisaContratarNovoCaixa = true;

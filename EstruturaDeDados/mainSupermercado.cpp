@@ -6,6 +6,8 @@ int main()
 {
 	std::string arquivoConfiguracao = "naocompre.dat";
 	Supermercado mercado(arquivoConfiguracao);
+	mercado.rodarSimulacao();
+	mercado.CalcularEstatisticas();
 	return 0;
 }
 

@@ -15,7 +15,7 @@ public:
 	Supermercado(std::string caminhoArquivoConfiguracao);
 	~Supermercado(void);
 	void rodarSimulacao();
-	void CacularEstatisticas();
+	void CalcularEstatisticas();
 private:
 	std::string m_NomeDoSupermercado;
 	ListaCircular<Caixa> m_listaDeCaixas;
@@ -26,7 +26,6 @@ private:
 	int m_tempoMedioEmSegundosDeChegadaDeNovosClientes;
 	int m_tempoTotalDeSimulacaoEmHoras;
 	ListaCircular<Cliente> m_clientesAtendidos;
-	void CalcularEstatisticas();
 	void gerarCliente(bool caixasCheios);
 	void buscarMenorFila(Cliente *novo);
 	void buscarFilaComMenosProdutos(Cliente *novo);

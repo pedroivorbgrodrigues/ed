@@ -48,15 +48,20 @@ void Caixa::recebeCliente(Cliente *novo, int tempoAtual)
 Cliente* Caixa::atendeCliente(int tempoAtual) 
 {
 	this->m_tempoMedioDeEsperaDeUmClienteNaFila -= 1;
-	//try{
-	Cliente *proximo = m_clientes->retira();
-	if (proximo->getTempoSaida() == tempoAtual) {
-		this->m_faturamentoTotal += proximo->getValorTotalCompras();
-		this->m_numeroDeClientesAtendidos += 1;
-		this->m_numeroDeClientesNaFila -= 1;
-		return proximo;
+	try
+	{
+		Cliente *proximo = m_clientes->retira();
+		if (proximo->getTempoSaida() == tempoAtual) {
+			this->m_faturamentoTotal += proximo->getValorTotalCompras();
+			this->m_numeroDeClientesAtendidos += 1;
+			this->m_numeroDeClientesNaFila -= 1;
+			return proximo;
+		}
+		this->m_clientes->adicionaNoInicio(proximo);
 	}
-	this->m_clientes->adicionaNoInicio(proximo);
+	catch(std::exception& exc)
+	{
+	}
 	return NULL; //} catch(){}
 }
 
