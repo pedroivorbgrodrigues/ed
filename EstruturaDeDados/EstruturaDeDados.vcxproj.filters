@@ -54,9 +54,6 @@
     <ClInclude Include="Supermercado.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Estatisticas.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="ListaCircular.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -95,7 +92,7 @@
     <ClCompile Include="Supermercado.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Estatisticas.cpp">
+    <ClCompile Include="mainSupermercado.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

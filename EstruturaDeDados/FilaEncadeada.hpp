@@ -19,18 +19,14 @@ public:
 	~FilaEncadeadaCircular() {
 		destroiEstrutura();
 	}
-	void criaEstrutura() {
-		FilaEncadeadaCircular *aLista;
-		aLista = new FilaEncadeadaCircular();
-		if (aLista != NULL) {
-			aLista->tamanho = 1;
-			aLista->sentinela = new tElemento<T>();
-			if (sentinela == NULL)
-				throw std::overflow_error("Memória cheia!");
-			sentinela->setProximo(sentinela);
-			sentinela->setAnterior(sentinela);
-		}
+	void criaEstrutura() 
+	{
+			this->tamanho = 1;
+			this->sentinela = new tElemento<T>();
+			this->sentinela->setProximo(sentinela);
+			this->sentinela->setAnterior(sentinela);
 	}
+
 	bool estruturaVazia() {
 		if (this->tamanho == 1)
 			return true;

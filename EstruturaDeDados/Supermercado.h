@@ -1,22 +1,35 @@
 #pragma once
 #include "Caixa.h"
-#include <vector>
+#include "ListaCircular.hpp"
 
 class Supermercado
 {
 public:
-	Supermercado(std::string nomeDoSupermercado,std::vector<Eficiencia> eficienciaDosCaixas,int tempoMedioEmSegundosDeChegadaDeNovosClientes,int tempoTotalDeSimulacaoEmHoras, int tamanhoMaximoDasFilasParaDesistir);
+	Supermercado(std::string nomeDoSupermercado,
+		ListaCircular<std::string> *identificadoresDosCaixas,
+		ListaCircular<Eficiencia> *eficienciaDosCaixas,
+		ListaCircular<double> *salariosDosCaixas,
+		int tempoMedioEmSegundosDeChegadaDeNovosClientes,
+		int tempoTotalDeSimulacaoEmHoras,
+		int tamanhoMaximoDasFilasParaDesistir);
 	Supermercado(std::string caminhoArquivoConfiguracao);
 	~Supermercado(void);
+	void rodarSimulacao();
 	void CacularEstatisticas();
 private:
 	std::string m_NomeDoSupermercado;
-	ListaEncadeadaSimples<Caixa> m_listaDeCaixas;//AQUI É UMA LISTA CIRCULAR
-	int m_relogioInterno;//tipo ciclos
-	ListaEncadeadaSimples<Cliente> m_clientesDesistentes;
-	int m_tamanhoMaximoFilas;//se TODOS os caixas estiverem com a fila desse tamanho ou mais deve-se contratar um novo caixa pagando em dobro a hora
+	ListaCircular<Caixa> m_listaDeCaixas;
+	int m_relogioInterno; //tipo ciclos
+	ListaCircular<Cliente> m_clientesDesistentes;
+	int m_tamanhoMaximoFilas; //se TODOS os caixas estiverem com a fila desse tamanho ou mais deve-se contratar um novo caixa pagando em dobro a hora
+	int m_tempoDeChegadaDoProximoCliente;
 	int m_tempoMedioEmSegundosDeChegadaDeNovosClientes;
 	int m_tempoTotalDeSimulacaoEmHoras;
+	ListaCircular<Cliente> m_clientesAtendidos;
+	void CalcularEstatisticas();
+	void gerarCliente(bool caixasCheios);
+	void buscarMenorFila(Cliente *novo);
+	void buscarFilaComMenosProdutos(Cliente *novo);
 };
 /*
 Gerar valores aleatorios com distribuição uniforme no intervalo 0 a 1, utilize as funções rand e srand.
@@ -30,5 +43,4 @@ você pega o tamanho do intervalo, que é de 2 a 100 inclusive, logo 99 valores,
 e multiplica o seu numero aleatorio de 0 a 1 por 99. 
 A seguir adiciona o limite inferior do intervalo, 2, ao resultado. 
 Para que voce possa usar este numero ainda falta truncar, pegando so a parte inteira. Para isto basta fazer um typecasting: inteiro = (int) real;
-/*
-
+*/
