@@ -25,7 +25,8 @@ void Caixa::recebeCliente(Cliente *novo, int tempoAtual)
 	this->m_clientes->adiciona(novo);
 	this->m_numeroDeClientesNaFila += 1;
 	int tempo = novo->getNumeroDeProdutos();
-	switch (m_eficiencia) {
+	switch (m_eficiencia) 
+	{
 	case eficiente:
 		if (novo->vaiPagarComCheque())
 			tempo += 10;
@@ -41,13 +42,13 @@ void Caixa::recebeCliente(Cliente *novo, int tempoAtual)
 			tempo += 60;
 	}
 	this->m_tempoMedioDeEsperaDeUmClienteNaFila += tempo;
-	novo->setTempoSaida(
-		tempo + this->m_tempoMedioDeEsperaDeUmClienteNaFila + tempoAtual);
+	novo->setTempoSaida(tempo + this->m_tempoMedioDeEsperaDeUmClienteNaFila + tempoAtual);
 }
 
 Cliente* Caixa::atendeCliente(int tempoAtual) 
 {
-	this->m_tempoMedioDeEsperaDeUmClienteNaFila -= 1;
+	if (this->m_tempoMedioDeEsperaDeUmClienteNaFila>1)
+		this->m_tempoMedioDeEsperaDeUmClienteNaFila -= 1 ;
 	try
 	{
 		Cliente *proximo = m_clientes->retira();

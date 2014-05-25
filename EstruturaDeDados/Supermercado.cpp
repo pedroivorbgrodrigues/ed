@@ -83,8 +83,8 @@ void Supermercado::CalcularEstatisticas()
 	{
 		Caixa *atual = this->m_listaDeCaixas.retiraDoInicio();
 		
-		cout << atual->getIdentificador() << endl;
-		cout << "Faturamento: " << atual->getFaturamento() << endl;
+		cout << atual->getIdentificador() << "  ";
+		cout << "Faturamento: " << atual->getFaturamento() << "  ";
 		
 		int horasTrabalhadas = this->m_tempoTotalDeSimulacaoEmHoras - (int) (atual->getTempoDeEntrada() / (60 * 60));
 		int desconto = atual->getSalario() * horasTrabalhadas;
@@ -93,7 +93,7 @@ void Supermercado::CalcularEstatisticas()
 			desconto *= 2;
 		}
 
-		cout << "Lucro: " << atual->getFaturamento() - desconto;
+		cout << "Lucro: " << atual->getFaturamento() - desconto << endl;
 		
 		faturamentoTotal += atual->getFaturamento();
 		this->m_listaDeCaixas.adicionaNoFim(atual);
@@ -121,7 +121,7 @@ void Supermercado::CalcularEstatisticas()
 		this->m_clientesDesistentes.adicionaNoFim(atual);
 	}
 
-	cout << "Faturamento perdido: " << faturamentoPerdido * 3;
+	cout << "  Faturamento perdido: " << faturamentoPerdido * 3;
 }
 
 void Supermercado::rodarSimulacao() 
@@ -163,6 +163,7 @@ void Supermercado::rodarSimulacao()
 			}
 			Caixa *novo = new Caixa("Extra", eficiencia, salario, true, this->m_relogioInterno);
 			this->m_listaDeCaixas.adicionaNoFim(novo);
+			this->gerarCliente(precisaContratarNovoCaixa);
 		}
 
 		if (this->m_relogioInterno == this->m_tempoDeChegadaDoProximoCliente) 
@@ -178,7 +179,10 @@ void Supermercado::gerarCliente(bool caixasCheios)
 {
 	Cliente *novo = new Cliente(this->m_relogioInterno);
 	if (caixasCheios) 
+	{
 		this->m_clientesDesistentes.adicionaNoFim(novo);
+		return;
+	}
 	else 
 	{
 		switch (novo->getTipoCliente()) 
@@ -191,10 +195,12 @@ void Supermercado::gerarCliente(bool caixasCheios)
 			break;
 		}
 	}
-	int intervalo = (int) ((randomico() * this->m_tempoMedioEmSegundosDeChegadaDeNovosClientes) - (this->m_tempoMedioEmSegundosDeChegadaDeNovosClientes / 2));
-	this->m_tempoDeChegadaDoProximoCliente = this->m_tempoMedioEmSegundosDeChegadaDeNovosClientes + intervalo;
+	double randomTempoNovoCliente =  randomico() * this->m_tempoMedioEmSegundosDeChegadaDeNovosClientes;
+	int tempoNovoCliente = this->m_tempoMedioEmSegundosDeChegadaDeNovosClientes + (int)randomTempoNovoCliente;
+	this->m_tempoDeChegadaDoProximoCliente = this->m_relogioInterno + tempoNovoCliente;
 }
-void Supermercado::buscarMenorFila(Cliente *novo) {
+void Supermercado::buscarMenorFila(Cliente *novo) 
+{
 	Caixa *escolhido, *teste;
 	escolhido = this->m_listaDeCaixas.retiraDoInicio();
 	this->m_listaDeCaixas.adicionaNoFim(escolhido);
@@ -207,7 +213,9 @@ void Supermercado::buscarMenorFila(Cliente *novo) {
 	}
 	escolhido->recebeCliente(novo, this->m_relogioInterno);
 }
-void Supermercado::buscarFilaComMenosProdutos(Cliente *novo) {
+
+void Supermercado::buscarFilaComMenosProdutos(Cliente *novo) 
+{
 	Caixa *escolhido, *teste;
 	escolhido = this->m_listaDeCaixas.retiraDoInicio();
 	this->m_listaDeCaixas.adicionaNoFim(escolhido);

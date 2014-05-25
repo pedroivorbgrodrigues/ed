@@ -80,6 +80,7 @@ public:
 		this->tamanho = (this->tamanho + 1);
 		return this->tamanho;
 	}
+
 	T* retiraDaPosicao(int posicao) {
 		tElemento<T> *anterior, *proximo, *eliminar;
 		T *volta;
