@@ -62,7 +62,7 @@ double Cliente::getValorTotalCompras()
 	return this->m_valorTotalDosProdutos;
 }
 
-TipoCliente Cliente::getTipoCliente() 
+Cliente::TipoCliente Cliente::getTipoCliente() 
 {
 	return this->m_tipoCliente;
 }

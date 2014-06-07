@@ -1,0 +1,28 @@
+\hypertarget{index_intro_sec}{}\section{Instruções}\label{index_intro_sec}
+O sistema modela e simula um \hyperlink{class_supermercado}{Supermercado}. Fornecendo dados como o número de caixas empregados, assim como sua eficiência, e o tempo médio de chegada de novos clientes ao estabelecimento, o programa devolve estatísticas que permitem ao proprietário a cognição do número ideal de caixas para atender seus fregueses e os custos de operação de seu negócio, em função do faturamento gerado por cada um de seus funcionários.~\newline
+ Ao iniciar o sistema, o usuário poderá escolher entre ler um arquivo que contém as informações de seu supermercado, ou digitá-\/las manualmente.~\newline
+ Caso escolha ler um arquivo pré-\/existente, o nome do arquivo (incluindo extensão) deve ser digitado quando solicitado. É indispensável que o arquivo encontre-\/se na mesma pasta que o programa. Caso contrário ele não será encontrado. O sistema reconhece arquivos das extensões .dat e .txt.~\newline
+ O arquivo de leitura deve estar configurado seguindo o formato da Figura 1. Qualquer linha pode ser utilizada para escrever um comentário, bastando inicia-\/la com o caractere \#.~\newline
+ Os seguintes dados devem ser digitados, um por linha, mantendo a ordem\+:
+\begin{DoxyItemize}
+\item Nome do \hyperlink{class_supermercado}{Supermercado}.
+\item Tempo desejado de simulação, em horas.
+\item Tempo médio da chegada de novos clientes, em segundos.
+\item Número de caixas empregados.
+\item Nas linhas subsequentes, os dados dos caixas devem ser fornecidos, um por linha, separando as informações existentes por espaços.
+\item Identificação (espaço) eficiência (espaço) salário.
+\item Em eficiência, deve-\/se digitar 1 (caixa eficiente), 2 (caixa médio) ou 3 (caixa ruim).
+\end{DoxyItemize}
+
+ ~\newline
+ Se os dados forem fornecidos corretamente, ou o arquivo de leitura esteja corretamente redigido, o programa deve rodar sem a existência de erros.~\newline
+ Após o início da simulação, o programa gerará clientes a intervalos randômicos calculados com base na média do tempo de chegada fornecida. ~\newline
+ Cada cliente compra um número variável de produtos com preços variáveis. Os clientes podem procurar uma fila com um número menor de pessoas, ou uma fila onde haja um número menor de produtos. Caso o supermercado esteja muito cheio, ou seja, haja 10 ou mais pessoas em cada fila, o cliente abandona suas compras, e o valor referente a elas é calculado como faturamento que se deixou de obter. Na ocasião de desistência de um cliente, o sistema assume a necessidade da adição de um novo caixa. Este caixa, no entanto, possui custo em dobro, devido ao caráter de urgência.~\newline
+ Ao final da execução, serão fornecidos detalhadamente os resultados da simulação, mostrando ao proprietário a contabilidade de seu negócio, possibilitando um melhor planejamento quanto ao número e quadro de funcionários.~\newline
+~\newline
+~\newline
+~\newline
+~\newline
+\hypertarget{index_diagram}{}\section{Diagrama U\+M\+L}\label{index_diagram}
+~\newline
+  

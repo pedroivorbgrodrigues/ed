@@ -6,7 +6,7 @@
 #include <string>
 #include <vector>
 
-Supermercado::Supermercado(std::string nomeDoSupermercado,	ListaCircular<std::string> *identificadoresDosCaixas, ListaCircular<Eficiencia> *eficienciaDosCaixas, 
+Supermercado::Supermercado(std::string nomeDoSupermercado,	ListaCircular<std::string> *identificadoresDosCaixas, ListaCircular<Caixa::Eficiencia> *eficienciaDosCaixas, 
 	ListaCircular<double> *salariosDosCaixas,	int tempoMedioEmSegundosDeChegadaDeNovosClientes,	int tempoTotalDeSimulacaoEmHoras,	int tamanhoMaximoDasFilasParaDesistir) 
 {
 		this->m_NomeDoSupermercado = nomeDoSupermercado;
@@ -61,7 +61,7 @@ Supermercado::Supermercado(std::string caminhoParaArquivo)
 	for (int indiceCaixa = 0; indiceCaixa < quantidadeDeCaixas; indiceCaixa++)
 	{
 		std::vector<std::string> informacoesCaixa = splitString(linhasArquivo.at(indiceLinhaAtual++),' ');
-		Caixa* novoCaixa = new Caixa(informacoesCaixa.at(0),(Eficiencia) (atoi(informacoesCaixa.at(1).c_str())),atoi(informacoesCaixa.at(2).c_str()),false,this->m_relogioInterno);
+		Caixa* novoCaixa = new Caixa(informacoesCaixa.at(0),(Caixa::Eficiencia) (atoi(informacoesCaixa.at(1).c_str())),atoi(informacoesCaixa.at(2).c_str()),false,this->m_relogioInterno);
 		m_listaDeCaixas.adicionaNoFim(novoCaixa);
 	}
 }
@@ -75,9 +75,10 @@ void Supermercado::CalcularEstatisticas()
 {
 	using namespace std;
 	cout << "Estatísticas do Supermercado " << this->m_NomeDoSupermercado << endl;
-	cout << endl << "Faturamento por caixa:" << endl;
+	cout << endl << "Faturamento por caixa:" << endl << endl;
 	
 	double faturamentoTotal = 0;
+	int totalClientes = 0;
 
 	for (int i = 0; i < this->m_listaDeCaixas.obterTamanho(); i++) 
 	{
@@ -92,25 +93,17 @@ void Supermercado::CalcularEstatisticas()
 		{
 			desconto *= 2;
 		}
-
+		totalClientes+= atual->getNroClientesAtendidos();
+		cout << "Faturamento medio: " << atual->getFaturamento()/atual->getNroClientesAtendidos() << "  ";
 		cout << "Lucro: " << atual->getFaturamento() - desconto << endl;
+		 
 		
 		faturamentoTotal += atual->getFaturamento();
 		this->m_listaDeCaixas.adicionaNoFim(atual);
 	}
-	cout << endl << "Faturamento médio por caixa: " << faturamentoTotal / this->m_listaDeCaixas.obterTamanho() << endl;
-	double tempoMedioDeEsperaDeUmClienteNaFila = 0;
-
-	for (int i = 0; i < this->m_clientesAtendidos.obterTamanho(); i++) 
-	{
-		Cliente *atual;
-		atual = this->m_clientesAtendidos.retiraDoInicio();
-		tempoMedioDeEsperaDeUmClienteNaFila += atual->getTempoSaida() - atual->getTempoChegada();
-		this->m_clientesAtendidos.adicionaNoFim(atual);
-	}
-	tempoMedioDeEsperaDeUmClienteNaFila /= this->m_clientesAtendidos.obterTamanho();
+	printf ("\nFaturamento total: %4.2f\n\n",faturamentoTotal);
 	
-	cout << "Tempo médio de espera de um cliente na fila: " << tempoMedioDeEsperaDeUmClienteNaFila << " segundos" << endl;
+	cout << "Tempo medio de espera de um cliente na fila: " << (double)this->m_relogioInterno/(double)totalClientes << " segundos" << endl << endl;
 	cout << "Clientes desistentes: " << this->m_clientesDesistentes.obterTamanho();
 	
 	double faturamentoPerdido = 0;
@@ -138,32 +131,29 @@ void Supermercado::rodarSimulacao()
 			this->m_listaDeCaixas.adicionaNoFim(atual);
 			if (atual->getNroClientes() < 10)
 				precisaContratarNovoCaixa = false;
-			if (atendido != NULL)
-				this->m_clientesAtendidos.adicionaNoFim(atendido);
 		}
 		if (precisaContratarNovoCaixa) 
 		{
 			int numeroEficiencia = (int) ((randomico() * 3) + 1);
-			Eficiencia eficiencia;
+			Caixa::Eficiencia eficiencia;
 			double salario;
 			switch (numeroEficiencia) 
 			{
 			case 1:
-				eficiencia = eficiente;
+				eficiencia = Caixa::Eficiencia::eficiente;
 				salario = 800;
 				break;
 			case 2:
-				eficiencia = medio;
+				eficiencia = Caixa::Eficiencia::medio;
 				salario = 540;
 				break;
 			case 3:
-				eficiencia = ruim;
+				eficiencia = Caixa::Eficiencia::ruim;
 				salario = 180;
 				break;
 			}
 			Caixa *novo = new Caixa("Extra", eficiencia, salario, true, this->m_relogioInterno);
 			this->m_listaDeCaixas.adicionaNoFim(novo);
-			this->gerarCliente(precisaContratarNovoCaixa);
 		}
 
 		if (this->m_relogioInterno == this->m_tempoDeChegadaDoProximoCliente) 
@@ -187,16 +177,20 @@ void Supermercado::gerarCliente(bool caixasCheios)
 	{
 		switch (novo->getTipoCliente()) 
 		{
-		case buscaMenorFila:
+		case Cliente::TipoCliente::buscaMenorFila:
 			buscarMenorFila(novo);
 			break;
-		case buscaFilaComMenosProdutos:
+		case Cliente::TipoCliente::buscaFilaComMenosProdutos:
 			buscarFilaComMenosProdutos(novo);
 			break;
 		}
 	}
-	double randomTempoNovoCliente =  randomico() * this->m_tempoMedioEmSegundosDeChegadaDeNovosClientes;
-	int tempoNovoCliente = this->m_tempoMedioEmSegundosDeChegadaDeNovosClientes + (int)randomTempoNovoCliente;
+	double randomTempoNovoCliente =  randomico() * this->m_tempoMedioEmSegundosDeChegadaDeNovosClientes;	
+	double metade = (this->m_tempoMedioEmSegundosDeChegadaDeNovosClientes / 2);
+	int tempoNovoCliente = this->m_tempoMedioEmSegundosDeChegadaDeNovosClientes;
+	tempoNovoCliente += randomTempoNovoCliente - metade;
+	if (tempoNovoCliente < 0)
+		tempoNovoCliente *= -1;
 	this->m_tempoDeChegadaDoProximoCliente = this->m_relogioInterno + tempoNovoCliente;
 }
 void Supermercado::buscarMenorFila(Cliente *novo) 

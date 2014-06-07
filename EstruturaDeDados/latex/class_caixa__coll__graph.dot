@@ -1,0 +1,6 @@
+digraph "Caixa"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{Caixa\n||+ Caixa()\l+ ~Caixa()\l+ recebeCliente()\l+ atendeCliente()\l+ getNroClientes()\l+ getNroClientesAtendidos()\l+ getTempoEspera()\l+ getFaturamento()\l+ getIdentificador()\l+ getDesempenho()\l+ getNroProdutos()\l+ getSalario()\l+ getSobrehora()\l+ getTempoDeEntrada()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+}

@@ -7,6 +7,10 @@
 #define ERROLISTAVAZIA -2
 #define ERROPOSICAO -3
 
+/**
+*@brief  Implementação da estrutura de dado fila encadeada circular
+*/
+
 template<class T>
 class FilaEncadeadaCircular {
 protected:
@@ -19,6 +23,9 @@ public:
 	~FilaEncadeadaCircular() {
 		destroiEstrutura();
 	}
+	/**
+	*  Inicialização da estrutura
+	*/
 	void criaEstrutura() 
 	{
 			this->tamanho = 1;
@@ -27,11 +34,18 @@ public:
 			this->sentinela->setAnterior(sentinela);
 	}
 
+	/**
+	*  Retorna se a estrutura encontra-se vazia
+	*/
 	bool estruturaVazia() {
 		if (this->tamanho == 1)
 			return true;
 		return false;
 	}
+
+	/**
+	*  Adiciona um novo elemento no final da estrutura
+	*/
 	int adiciona(T *dado) {
 		tElemento<T> *novo, *anterior;
 		novo = new tElemento<T>();
@@ -46,6 +60,10 @@ public:
 		this->tamanho = (this->tamanho + 1);
 		return this->tamanho;
 	}
+
+	/**
+	*  Remove o primeiro elemento adiciona na estrutura
+	*/
 	T* retira() {
 		tElemento<T> *eliminar, *proximo;
 		T* volta;
@@ -62,6 +80,10 @@ public:
 		eliminar->setInfo(NULL);
 		return volta;
 	}
+
+	/**
+	*  Adiciona um novo elemento no início da estrutura
+	*/
 	int adicionaNoInicio(T *dado) {
 		tElemento<T> *novo, *proximo;
 		novo = new tElemento<T>();
@@ -76,13 +98,26 @@ public:
 		this->tamanho = this->tamanho + 1;
 		return this->tamanho;
 	}
+
+	/**
+	*  Retorna o elemento no topo da estrutura
+	*/
 	T obterTopo() {
 		return this->sentinela->getAnterior()->getInfo();
 	}
+
+	/**
+	*  Retorna o tamanho da estrutura
+	*/
 	int obterTamanho() {
 		return this->tamanho-1;
 	}
+
+	/**
+	*  Reinicializa a estrutura
+	*/
 	void destroiEstrutura() {
+		/*
 		tElemento<T> *atual, *anterior;
 		atual = this->sentinela;
 		while (atual != NULL) {
@@ -92,6 +127,7 @@ public:
 			delete (anterior);
 		}
 		this->tamanho = 0;
+		*/
 	}
 };
 #endif

@@ -1,0 +1,138 @@
+\hypertarget{class_fila_encadeada_circular}{\section{Referência à classe Template Fila\+Encadeada\+Circular$<$ T $>$}
+\label{class_fila_encadeada_circular}\index{Fila\+Encadeada\+Circular$<$ T $>$@{Fila\+Encadeada\+Circular$<$ T $>$}}
+}
+
+
+Implementação da estrutura de dado fila encadeada circular.  
+
+
+
+
+{\ttfamily \#include $<$Fila\+Encadeada.\+hpp$>$}
+
+Diagrama de heranças da classe Fila\+Encadeada\+Circular$<$ T $>$\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_fila_encadeada_circular}
+\end{center}
+\end{figure}
+\subsection*{Membros públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_fila_encadeada_circular_abc8c9843469e21051da2301482607eee}{Fila\+Encadeada\+Circular} ()
+\item 
+\hyperlink{class_fila_encadeada_circular_af0fc66d6ac033bbeed34e605f2aac6f7}{$\sim$\+Fila\+Encadeada\+Circular} ()
+\item 
+void \hyperlink{class_fila_encadeada_circular_a7cf9350910752a11791a8c11d9f9db6b}{cria\+Estrutura} ()
+\item 
+bool \hyperlink{class_fila_encadeada_circular_ae3672f48a1ba222f8b763ffdf23b7a28}{estrutura\+Vazia} ()
+\item 
+int \hyperlink{class_fila_encadeada_circular_a5be1b9cba51f2a0e56ff28cac6ccf95c}{adiciona} (T $\ast$dado)
+\item 
+T $\ast$ \hyperlink{class_fila_encadeada_circular_a6d92caf9954566984c82317355f1cfea}{retira} ()
+\item 
+int \hyperlink{class_fila_encadeada_circular_ac8cfb69ffbb7928b635602f323f558ce}{adiciona\+No\+Inicio} (T $\ast$dado)
+\item 
+T \hyperlink{class_fila_encadeada_circular_a453f5226938097c020a82f24522886e1}{obter\+Topo} ()
+\item 
+int \hyperlink{class_fila_encadeada_circular_ae58955bcc5f4d14d1f55a40cf39471ec}{obter\+Tamanho} ()
+\item 
+void \hyperlink{class_fila_encadeada_circular_a9639a74b8534ea1a7c635fa23a9cf284}{destroi\+Estrutura} ()
+\end{DoxyCompactItemize}
+\subsection*{Atributos Protegidos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classt_elemento}{t\+Elemento}$<$ T $>$ $\ast$ \hyperlink{class_fila_encadeada_circular_a4286760de29b4691846e8fef53459f33}{sentinela}
+\item 
+int \hyperlink{class_fila_encadeada_circular_a681be4fb4159df86faab4421fcacb099}{tamanho}
+\end{DoxyCompactItemize}
+
+
+\subsection{Documentação dos Construtores \& Destrutor}
+\hypertarget{class_fila_encadeada_circular_abc8c9843469e21051da2301482607eee}{\index{Fila\+Encadeada\+Circular@{Fila\+Encadeada\+Circular}!Fila\+Encadeada\+Circular@{Fila\+Encadeada\+Circular}}
+\index{Fila\+Encadeada\+Circular@{Fila\+Encadeada\+Circular}!Fila\+Encadeada\+Circular@{Fila\+Encadeada\+Circular}}
+\subsubsection[{Fila\+Encadeada\+Circular}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf Fila\+Encadeada\+Circular}$<$ T $>$\+::{\bf Fila\+Encadeada\+Circular} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_fila_encadeada_circular_abc8c9843469e21051da2301482607eee}
+\hypertarget{class_fila_encadeada_circular_af0fc66d6ac033bbeed34e605f2aac6f7}{\index{Fila\+Encadeada\+Circular@{Fila\+Encadeada\+Circular}!````~Fila\+Encadeada\+Circular@{$\sim$\+Fila\+Encadeada\+Circular}}
+\index{````~Fila\+Encadeada\+Circular@{$\sim$\+Fila\+Encadeada\+Circular}!Fila\+Encadeada\+Circular@{Fila\+Encadeada\+Circular}}
+\subsubsection[{$\sim$\+Fila\+Encadeada\+Circular}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf Fila\+Encadeada\+Circular}$<$ T $>$\+::$\sim${\bf Fila\+Encadeada\+Circular} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_fila_encadeada_circular_af0fc66d6ac033bbeed34e605f2aac6f7}
+
+
+\subsection{Documentação dos métodos}
+\hypertarget{class_fila_encadeada_circular_a5be1b9cba51f2a0e56ff28cac6ccf95c}{\index{Fila\+Encadeada\+Circular@{Fila\+Encadeada\+Circular}!adiciona@{adiciona}}
+\index{adiciona@{adiciona}!Fila\+Encadeada\+Circular@{Fila\+Encadeada\+Circular}}
+\subsubsection[{adiciona}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ int {\bf Fila\+Encadeada\+Circular}$<$ T $>$\+::adiciona (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{dado}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_fila_encadeada_circular_a5be1b9cba51f2a0e56ff28cac6ccf95c}
+Adiciona um novo elemento no final da estrutura \hypertarget{class_fila_encadeada_circular_ac8cfb69ffbb7928b635602f323f558ce}{\index{Fila\+Encadeada\+Circular@{Fila\+Encadeada\+Circular}!adiciona\+No\+Inicio@{adiciona\+No\+Inicio}}
+\index{adiciona\+No\+Inicio@{adiciona\+No\+Inicio}!Fila\+Encadeada\+Circular@{Fila\+Encadeada\+Circular}}
+\subsubsection[{adiciona\+No\+Inicio}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ int {\bf Fila\+Encadeada\+Circular}$<$ T $>$\+::adiciona\+No\+Inicio (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{dado}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_fila_encadeada_circular_ac8cfb69ffbb7928b635602f323f558ce}
+Adiciona um novo elemento no início da estrutura \hypertarget{class_fila_encadeada_circular_a7cf9350910752a11791a8c11d9f9db6b}{\index{Fila\+Encadeada\+Circular@{Fila\+Encadeada\+Circular}!cria\+Estrutura@{cria\+Estrutura}}
+\index{cria\+Estrutura@{cria\+Estrutura}!Fila\+Encadeada\+Circular@{Fila\+Encadeada\+Circular}}
+\subsubsection[{cria\+Estrutura}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf Fila\+Encadeada\+Circular}$<$ T $>$\+::cria\+Estrutura (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_fila_encadeada_circular_a7cf9350910752a11791a8c11d9f9db6b}
+Inicialização da estrutura \hypertarget{class_fila_encadeada_circular_a9639a74b8534ea1a7c635fa23a9cf284}{\index{Fila\+Encadeada\+Circular@{Fila\+Encadeada\+Circular}!destroi\+Estrutura@{destroi\+Estrutura}}
+\index{destroi\+Estrutura@{destroi\+Estrutura}!Fila\+Encadeada\+Circular@{Fila\+Encadeada\+Circular}}
+\subsubsection[{destroi\+Estrutura}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf Fila\+Encadeada\+Circular}$<$ T $>$\+::destroi\+Estrutura (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_fila_encadeada_circular_a9639a74b8534ea1a7c635fa23a9cf284}
+Reinicializa a estrutura \hypertarget{class_fila_encadeada_circular_ae3672f48a1ba222f8b763ffdf23b7a28}{\index{Fila\+Encadeada\+Circular@{Fila\+Encadeada\+Circular}!estrutura\+Vazia@{estrutura\+Vazia}}
+\index{estrutura\+Vazia@{estrutura\+Vazia}!Fila\+Encadeada\+Circular@{Fila\+Encadeada\+Circular}}
+\subsubsection[{estrutura\+Vazia}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ bool {\bf Fila\+Encadeada\+Circular}$<$ T $>$\+::estrutura\+Vazia (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_fila_encadeada_circular_ae3672f48a1ba222f8b763ffdf23b7a28}
+Retorna se a estrutura encontra-\/se vazia \hypertarget{class_fila_encadeada_circular_ae58955bcc5f4d14d1f55a40cf39471ec}{\index{Fila\+Encadeada\+Circular@{Fila\+Encadeada\+Circular}!obter\+Tamanho@{obter\+Tamanho}}
+\index{obter\+Tamanho@{obter\+Tamanho}!Fila\+Encadeada\+Circular@{Fila\+Encadeada\+Circular}}
+\subsubsection[{obter\+Tamanho}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ int {\bf Fila\+Encadeada\+Circular}$<$ T $>$\+::obter\+Tamanho (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_fila_encadeada_circular_ae58955bcc5f4d14d1f55a40cf39471ec}
+Retorna o tamanho da estrutura \hypertarget{class_fila_encadeada_circular_a453f5226938097c020a82f24522886e1}{\index{Fila\+Encadeada\+Circular@{Fila\+Encadeada\+Circular}!obter\+Topo@{obter\+Topo}}
+\index{obter\+Topo@{obter\+Topo}!Fila\+Encadeada\+Circular@{Fila\+Encadeada\+Circular}}
+\subsubsection[{obter\+Topo}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T {\bf Fila\+Encadeada\+Circular}$<$ T $>$\+::obter\+Topo (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_fila_encadeada_circular_a453f5226938097c020a82f24522886e1}
+Retorna o elemento no topo da estrutura \hypertarget{class_fila_encadeada_circular_a6d92caf9954566984c82317355f1cfea}{\index{Fila\+Encadeada\+Circular@{Fila\+Encadeada\+Circular}!retira@{retira}}
+\index{retira@{retira}!Fila\+Encadeada\+Circular@{Fila\+Encadeada\+Circular}}
+\subsubsection[{retira}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T$\ast$ {\bf Fila\+Encadeada\+Circular}$<$ T $>$\+::retira (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_fila_encadeada_circular_a6d92caf9954566984c82317355f1cfea}
+Remove o primeiro elemento adiciona na estrutura 
+
+\subsection{Documentação dos dados membro}
+\hypertarget{class_fila_encadeada_circular_a4286760de29b4691846e8fef53459f33}{\index{Fila\+Encadeada\+Circular@{Fila\+Encadeada\+Circular}!sentinela@{sentinela}}
+\index{sentinela@{sentinela}!Fila\+Encadeada\+Circular@{Fila\+Encadeada\+Circular}}
+\subsubsection[{sentinela}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf t\+Elemento}$<$T$>$$\ast$ {\bf Fila\+Encadeada\+Circular}$<$ T $>$\+::sentinela\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_fila_encadeada_circular_a4286760de29b4691846e8fef53459f33}
+\hypertarget{class_fila_encadeada_circular_a681be4fb4159df86faab4421fcacb099}{\index{Fila\+Encadeada\+Circular@{Fila\+Encadeada\+Circular}!tamanho@{tamanho}}
+\index{tamanho@{tamanho}!Fila\+Encadeada\+Circular@{Fila\+Encadeada\+Circular}}
+\subsubsection[{tamanho}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ int {\bf Fila\+Encadeada\+Circular}$<$ T $>$\+::tamanho\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_fila_encadeada_circular_a681be4fb4159df86faab4421fcacb099}
+
+
+A documentação para esta classe foi gerada a partir do seguinte ficheiro\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_fila_encadeada_8hpp}{Fila\+Encadeada.\+hpp}\end{DoxyCompactItemize}

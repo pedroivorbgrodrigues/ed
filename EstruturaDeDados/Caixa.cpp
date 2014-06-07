@@ -52,7 +52,7 @@ Cliente* Caixa::atendeCliente(int tempoAtual)
 	try
 	{
 		Cliente *proximo = m_clientes->retira();
-		if (proximo->getTempoSaida() == tempoAtual) {
+		if (proximo->getTempoSaida() <= tempoAtual) {
 			this->m_faturamentoTotal += proximo->getValorTotalCompras();
 			this->m_numeroDeClientesAtendidos += 1;
 			this->m_numeroDeClientesNaFila -= 1;
@@ -62,6 +62,7 @@ Cliente* Caixa::atendeCliente(int tempoAtual)
 	}
 	catch(std::exception& exc)
 	{
+		
 	}
 	return NULL; //} catch(){}
 }

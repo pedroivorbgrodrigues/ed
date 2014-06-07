@@ -16,33 +16,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />
+    <None Include="Doxyfile">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="SupermercadoPB.cd" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="targetver.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="EstruturaLinear.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Fila.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ElementoDaFila.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ListaContabil.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Lancamento.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ListaEncadeadaSimples.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="NodoLista.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Cliente.h">
@@ -60,30 +43,15 @@
     <ClInclude Include="tElemento.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FilaEncadeada.hpp">
+    <ClInclude Include="GeradorRandomico.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GeradorRandomico.h">
+    <ClInclude Include="FilaEncadeada.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="EstruturaDeDados.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Lancamento.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Trabalho03.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="trab04.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Trabalho05.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Cliente.cpp">

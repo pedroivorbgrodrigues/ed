@@ -1,0 +1,75 @@
+\hypertarget{class_supermercado}{\section{Referência à classe Supermercado}
+\label{class_supermercado}\index{Supermercado@{Supermercado}}
+}
+
+
+Responsável pelo armazenamento dos parametros de execução e por conter a lógica da aplicação~\newline
+ A funcionalidade relacionada com a desistencia de compra pelos clientes não está ocorrendo devido ao parametro padrão definido nos requisitos do projeto ser mutualmente exclusivo com a contratação de novos caixas.  
+
+
+
+
+{\ttfamily \#include $<$Supermercado.\+h$>$}
+
+\subsection*{Membros públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_supermercado_a51e46aa12924a52dbf0e4f26ad3bd7b3}{Supermercado} (std\+::string nome\+Do\+Supermercado, \hyperlink{class_lista_circular}{Lista\+Circular}$<$ std\+::string $>$ $\ast$identificadores\+Dos\+Caixas, \hyperlink{class_lista_circular}{Lista\+Circular}$<$ \hyperlink{class_caixa_a0e98d0cd8dc2ff4f73d637d73f7bbe85}{Caixa\+::\+Eficiencia} $>$ $\ast$eficiencia\+Dos\+Caixas, \hyperlink{class_lista_circular}{Lista\+Circular}$<$ double $>$ $\ast$salarios\+Dos\+Caixas, int tempo\+Medio\+Em\+Segundos\+De\+Chegada\+De\+Novos\+Clientes, int tempo\+Total\+De\+Simulacao\+Em\+Horas, int tamanho\+Maximo\+Das\+Filas\+Para\+Desistir)
+\item 
+\hyperlink{class_supermercado_a3f0598a98bd6179c4553eb213c4aa48c}{Supermercado} (std\+::string caminho\+Arquivo\+Configuracao)
+\item 
+\hyperlink{class_supermercado_ab21737ada65202c6293a503bfa64e8a0}{$\sim$\+Supermercado} (void)
+\item 
+void \hyperlink{class_supermercado_a2244eb3e925e1e5e78a0d152bbaa78a9}{rodar\+Simulacao} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Documentação dos Construtores \& Destrutor}
+\hypertarget{class_supermercado_a51e46aa12924a52dbf0e4f26ad3bd7b3}{\index{Supermercado@{Supermercado}!Supermercado@{Supermercado}}
+\index{Supermercado@{Supermercado}!Supermercado@{Supermercado}}
+\subsubsection[{Supermercado}]{\setlength{\rightskip}{0pt plus 5cm}Supermercado\+::\+Supermercado (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{nome\+Do\+Supermercado, }
+\item[{{\bf Lista\+Circular}$<$ std\+::string $>$ $\ast$}]{identificadores\+Dos\+Caixas, }
+\item[{{\bf Lista\+Circular}$<$ {\bf Caixa\+::\+Eficiencia} $>$ $\ast$}]{eficiencia\+Dos\+Caixas, }
+\item[{{\bf Lista\+Circular}$<$ double $>$ $\ast$}]{salarios\+Dos\+Caixas, }
+\item[{int}]{tempo\+Medio\+Em\+Segundos\+De\+Chegada\+De\+Novos\+Clientes, }
+\item[{int}]{tempo\+Total\+De\+Simulacao\+Em\+Horas, }
+\item[{int}]{tamanho\+Maximo\+Das\+Filas\+Para\+Desistir}
+\end{DoxyParamCaption}
+)}}\label{class_supermercado_a51e46aa12924a52dbf0e4f26ad3bd7b3}
+
+\begin{DoxyParams}{Parâmetros}
+{\em tamanho\+Maximo\+Das\+Filas\+Para\+Desistir} & Quando todos os caixas estiverem com esse numero de clientes na fila e um novo cliente chegar este desiste da compra. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_supermercado_a3f0598a98bd6179c4553eb213c4aa48c}{\index{Supermercado@{Supermercado}!Supermercado@{Supermercado}}
+\index{Supermercado@{Supermercado}!Supermercado@{Supermercado}}
+\subsubsection[{Supermercado}]{\setlength{\rightskip}{0pt plus 5cm}Supermercado\+::\+Supermercado (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{caminho\+Arquivo\+Configuracao}
+\end{DoxyParamCaption}
+)}}\label{class_supermercado_a3f0598a98bd6179c4553eb213c4aa48c}
+Construtor que recebe o arquivo de configuração de onde os parametros serão extraidos \hypertarget{class_supermercado_ab21737ada65202c6293a503bfa64e8a0}{\index{Supermercado@{Supermercado}!````~Supermercado@{$\sim$\+Supermercado}}
+\index{````~Supermercado@{$\sim$\+Supermercado}!Supermercado@{Supermercado}}
+\subsubsection[{$\sim$\+Supermercado}]{\setlength{\rightskip}{0pt plus 5cm}Supermercado\+::$\sim$\+Supermercado (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{class_supermercado_ab21737ada65202c6293a503bfa64e8a0}
+
+
+\subsection{Documentação dos métodos}
+\hypertarget{class_supermercado_a2244eb3e925e1e5e78a0d152bbaa78a9}{\index{Supermercado@{Supermercado}!rodar\+Simulacao@{rodar\+Simulacao}}
+\index{rodar\+Simulacao@{rodar\+Simulacao}!Supermercado@{Supermercado}}
+\subsubsection[{rodar\+Simulacao}]{\setlength{\rightskip}{0pt plus 5cm}void Supermercado\+::rodar\+Simulacao (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_supermercado_a2244eb3e925e1e5e78a0d152bbaa78a9}
+Método principal responsável por simular o funcionamento do \hyperlink{class_supermercado}{Supermercado} e apresentar as estatísticas no final da execução 
+
+A documentação para esta classe foi gerada a partir dos seguintes ficheiros\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_supermercado_8h}{Supermercado.\+h}\item 
+\hyperlink{_supermercado_8cpp}{Supermercado.\+cpp}\end{DoxyCompactItemize}

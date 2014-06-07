@@ -1,0 +1,115 @@
+\hypertarget{class_lista_circular}{\section{Referência à classe Template Lista\+Circular$<$ T $>$}
+\label{class_lista_circular}\index{Lista\+Circular$<$ T $>$@{Lista\+Circular$<$ T $>$}}
+}
+
+
+ImplementaÃ§Ã£o da estrutura de dado lista circular que herda da classe \hyperlink{class_fila_encadeada_circular}{Fila\+Encadeada\+Circular}.  
+
+
+
+
+{\ttfamily \#include $<$Lista\+Circular.\+hpp$>$}
+
+Diagrama de heranças da classe Lista\+Circular$<$ T $>$\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_lista_circular}
+\end{center}
+\end{figure}
+\subsection*{Membros públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_lista_circular_a257dc7d8b78f8312ac821ba437d9ab77}{Lista\+Circular} ()
+\item 
+\hyperlink{class_lista_circular_a17151a2a3416edbcdb8d095e64068c05}{$\sim$\+Lista\+Circular} ()
+\item 
+T $\ast$ \hyperlink{class_lista_circular_ae60601f89f078c8e456e6cd27188ea6d}{retira\+Do\+Inicio} ()
+\item 
+int \hyperlink{class_lista_circular_affd9b0cb331519a4386dc172708a4729}{adiciona\+No\+Fim} (T $\ast$dado)
+\item 
+T $\ast$ \hyperlink{class_lista_circular_a5314f5fcd36f0a7bc3f140971737b66a}{retira\+Do\+Fim} ()
+\item 
+\hyperlink{classt_elemento}{t\+Elemento}$<$ T $>$ $\ast$ \hyperlink{class_lista_circular_abfe109e00fc3bb438a26335586c2e0cb}{obter\+Proximo\+Decrescente} (int posicao)
+\item 
+\hyperlink{classt_elemento}{t\+Elemento}$<$ T $>$ $\ast$ \hyperlink{class_lista_circular_a3eb9602a4d4585f2b5d8bca3dd66146d}{obter\+Anterior\+Crescente} (int posicao)
+\item 
+int \hyperlink{class_lista_circular_a8fdef408a651dd0e86ef251ffe58e074}{adiciona\+Na\+Posicao} (T $\ast$info, int posicao)
+\item 
+T $\ast$ \hyperlink{class_lista_circular_ae310f8ef47da383064c3921bdc50f1c6}{retira\+Da\+Posicao} (int posicao)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Documentação dos Construtores \& Destrutor}
+\hypertarget{class_lista_circular_a257dc7d8b78f8312ac821ba437d9ab77}{\index{Lista\+Circular@{Lista\+Circular}!Lista\+Circular@{Lista\+Circular}}
+\index{Lista\+Circular@{Lista\+Circular}!Lista\+Circular@{Lista\+Circular}}
+\subsubsection[{Lista\+Circular}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf Lista\+Circular}$<$ T $>$\+::{\bf Lista\+Circular} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_lista_circular_a257dc7d8b78f8312ac821ba437d9ab77}
+\hypertarget{class_lista_circular_a17151a2a3416edbcdb8d095e64068c05}{\index{Lista\+Circular@{Lista\+Circular}!````~Lista\+Circular@{$\sim$\+Lista\+Circular}}
+\index{````~Lista\+Circular@{$\sim$\+Lista\+Circular}!Lista\+Circular@{Lista\+Circular}}
+\subsubsection[{$\sim$\+Lista\+Circular}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf Lista\+Circular}$<$ T $>$\+::$\sim${\bf Lista\+Circular} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_lista_circular_a17151a2a3416edbcdb8d095e64068c05}
+
+
+\subsection{Documentação dos métodos}
+\hypertarget{class_lista_circular_a8fdef408a651dd0e86ef251ffe58e074}{\index{Lista\+Circular@{Lista\+Circular}!adiciona\+Na\+Posicao@{adiciona\+Na\+Posicao}}
+\index{adiciona\+Na\+Posicao@{adiciona\+Na\+Posicao}!Lista\+Circular@{Lista\+Circular}}
+\subsubsection[{adiciona\+Na\+Posicao}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ int {\bf Lista\+Circular}$<$ T $>$\+::adiciona\+Na\+Posicao (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{info, }
+\item[{int}]{posicao}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_lista_circular_a8fdef408a651dd0e86ef251ffe58e074}
+ResponsÃ¡vel por adicionar um novo elemento na posiÃ§Ã£o informada \hypertarget{class_lista_circular_affd9b0cb331519a4386dc172708a4729}{\index{Lista\+Circular@{Lista\+Circular}!adiciona\+No\+Fim@{adiciona\+No\+Fim}}
+\index{adiciona\+No\+Fim@{adiciona\+No\+Fim}!Lista\+Circular@{Lista\+Circular}}
+\subsubsection[{adiciona\+No\+Fim}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ int {\bf Lista\+Circular}$<$ T $>$\+::adiciona\+No\+Fim (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{dado}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_lista_circular_affd9b0cb331519a4386dc172708a4729}
+ResponsÃ¡vel por adicionar um novo elemento no fim da fila \hypertarget{class_lista_circular_a3eb9602a4d4585f2b5d8bca3dd66146d}{\index{Lista\+Circular@{Lista\+Circular}!obter\+Anterior\+Crescente@{obter\+Anterior\+Crescente}}
+\index{obter\+Anterior\+Crescente@{obter\+Anterior\+Crescente}!Lista\+Circular@{Lista\+Circular}}
+\subsubsection[{obter\+Anterior\+Crescente}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf t\+Elemento}$<$T$>$$\ast$ {\bf Lista\+Circular}$<$ T $>$\+::obter\+Anterior\+Crescente (
+\begin{DoxyParamCaption}
+\item[{int}]{posicao}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_lista_circular_a3eb9602a4d4585f2b5d8bca3dd66146d}
+Retorna o elemento anterior em ordem crescente (iterando pela direita) \hypertarget{class_lista_circular_abfe109e00fc3bb438a26335586c2e0cb}{\index{Lista\+Circular@{Lista\+Circular}!obter\+Proximo\+Decrescente@{obter\+Proximo\+Decrescente}}
+\index{obter\+Proximo\+Decrescente@{obter\+Proximo\+Decrescente}!Lista\+Circular@{Lista\+Circular}}
+\subsubsection[{obter\+Proximo\+Decrescente}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf t\+Elemento}$<$T$>$$\ast$ {\bf Lista\+Circular}$<$ T $>$\+::obter\+Proximo\+Decrescente (
+\begin{DoxyParamCaption}
+\item[{int}]{posicao}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_lista_circular_abfe109e00fc3bb438a26335586c2e0cb}
+Retorna o proximo elemento em ordem decrescente (iterando pela esquerda) \hypertarget{class_lista_circular_ae310f8ef47da383064c3921bdc50f1c6}{\index{Lista\+Circular@{Lista\+Circular}!retira\+Da\+Posicao@{retira\+Da\+Posicao}}
+\index{retira\+Da\+Posicao@{retira\+Da\+Posicao}!Lista\+Circular@{Lista\+Circular}}
+\subsubsection[{retira\+Da\+Posicao}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T$\ast$ {\bf Lista\+Circular}$<$ T $>$\+::retira\+Da\+Posicao (
+\begin{DoxyParamCaption}
+\item[{int}]{posicao}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_lista_circular_ae310f8ef47da383064c3921bdc50f1c6}
+ResponsÃ¡vel por remover um elemento da posiÃ§Ã£o informada \hypertarget{class_lista_circular_a5314f5fcd36f0a7bc3f140971737b66a}{\index{Lista\+Circular@{Lista\+Circular}!retira\+Do\+Fim@{retira\+Do\+Fim}}
+\index{retira\+Do\+Fim@{retira\+Do\+Fim}!Lista\+Circular@{Lista\+Circular}}
+\subsubsection[{retira\+Do\+Fim}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T$\ast$ {\bf Lista\+Circular}$<$ T $>$\+::retira\+Do\+Fim (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_lista_circular_a5314f5fcd36f0a7bc3f140971737b66a}
+ResponsÃ¡vel por retirar o elemento do fim da fila \hypertarget{class_lista_circular_ae60601f89f078c8e456e6cd27188ea6d}{\index{Lista\+Circular@{Lista\+Circular}!retira\+Do\+Inicio@{retira\+Do\+Inicio}}
+\index{retira\+Do\+Inicio@{retira\+Do\+Inicio}!Lista\+Circular@{Lista\+Circular}}
+\subsubsection[{retira\+Do\+Inicio}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T$\ast$ {\bf Lista\+Circular}$<$ T $>$\+::retira\+Do\+Inicio (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_lista_circular_ae60601f89f078c8e456e6cd27188ea6d}
+ResponsÃ¡vel por retirar o elemento do inicio da fila 
+
+A documentação para esta classe foi gerada a partir do seguinte ficheiro\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_lista_circular_8hpp}{Lista\+Circular.\+hpp}\end{DoxyCompactItemize}

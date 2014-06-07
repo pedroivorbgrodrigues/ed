@@ -5,6 +5,9 @@
 #include "tElemento.hpp"
 #include "FilaEncadeada.hpp"
 
+/**
+*@brief Implementação da estrutura de dado lista circular que herda da classe FilaEncadeadaCircular
+*/
 template<class T>
 class ListaCircular: public FilaEncadeadaCircular<T> {
 public:
@@ -14,12 +17,22 @@ public:
 	~ListaCircular() {
 		destroiEstrutura();
 	}
+	/**
+	*  Responsável por retirar o elemento do inicio da fila
+	*/
 	T* retiraDoInicio() {
 		return retira();
 	}
+	/**
+	*  Responsável por adicionar um novo elemento no fim da fila
+	*/
 	int adicionaNoFim(T *dado) {
 		return adiciona(dado);
 	}
+	
+	/**
+	*  Responsável por retirar o elemento do fim da fila
+	*/
 	T* retiraDoFim() {
 		tElemento<T> *eliminar, *anterior;
 		T* volta;
@@ -37,6 +50,10 @@ public:
 		delete (eliminar);
 		return volta;
 	}
+	
+	/**
+	*  Retorna o proximo elemento em ordem decrescente (iterando pela esquerda)
+	*/
 	tElemento<T>* obterProximoDecrescente(int posicao) {
 		tElemento<T> *proximo;
 		proximo = this->sentinela;
@@ -44,6 +61,9 @@ public:
 			proximo = proximo->getAnterior();
 		return proximo;
 	}
+	/**
+	*  Retorna o elemento anterior em ordem crescente (iterando pela direita)
+	*/
 	tElemento<T>* obterAnteriorCrescente(int posicao) {
 		tElemento<T> *anterior;
 		anterior = this->sentinela;
@@ -51,6 +71,10 @@ public:
 			anterior = anterior->getProximo();
 		return anterior;
 	}
+
+	/**
+	*  Responsável por adicionar um novo elemento na posição informada
+	*/
 	int adicionaNaPosicao(T *info, int posicao) {
 		tElemento<T> *novo, *anterior, *proximo;
 		if (posicao > (this->tamanho + 1))
@@ -81,6 +105,9 @@ public:
 		return this->tamanho;
 	}
 
+	/**
+	*  Responsável por remover um elemento da posição informada
+	*/
 	T* retiraDaPosicao(int posicao) {
 		tElemento<T> *anterior, *proximo, *eliminar;
 		T *volta;

@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>Supermercado BP: Código-Fonte de Cliente.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Supermercado BP
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Localizar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Ficheiros</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Localizar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;ficheiros</span></a></li>
+      <li><a href="globals.html"><span>Ficheiros&#160;membro</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tudo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Ficheiros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funções</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variáveis</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerações</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Valores da enumeração</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Páginas</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Cliente.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="a00010.html">Ir para a documentação deste ficheiro.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00013.html">ListaCircular.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="a00002.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="a00002.html">Cliente</a> {</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="a00002.html#a8a3be2b4ce63f1f0c04d6ae5a71db657">   12</a></span>&#160;    <span class="keyword">enum</span> <a class="code" href="a00002.html#a8a3be2b4ce63f1f0c04d6ae5a71db657">TipoCliente</a> </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    {</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="a00002.html#a8a3be2b4ce63f1f0c04d6ae5a71db657aaf1391199882e9e29292e6b7b2ff2b91">   14</a></span>&#160;        <a class="code" href="a00002.html#a8a3be2b4ce63f1f0c04d6ae5a71db657aaf1391199882e9e29292e6b7b2ff2b91">buscaMenorFila</a>, </div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="a00002.html#a8a3be2b4ce63f1f0c04d6ae5a71db657a0e7a8fbf97e475f4fb92a09650c933e0">   15</a></span>&#160;        <a class="code" href="a00002.html#a8a3be2b4ce63f1f0c04d6ae5a71db657a0e7a8fbf97e475f4fb92a09650c933e0">buscaFilaComMenosProdutos</a></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    };</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="a00002.html#a6625b6a833a0e8b2f7959bc5344eb0be">Cliente</a>(<span class="keywordtype">int</span> tempoDeChegadaNoSupermercado);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="a00002.html#a29d1d53394350c66363109e33c990b58">~Cliente</a>();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="a00002.html#a756b8f00c253d491b8a4cabaa3c1540b">getNumeroDeProdutos</a>();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="a00002.html#ac2d3ce2f3bd1871c050ed882465d77aa">vaiPagarComCheque</a>();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00002.html#a5a7d3685690926672a511a169e47e19e">setTempoSaida</a>(<span class="keywordtype">int</span> tempoDeSaida);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="a00002.html#a43682e1d4ace198e91aa7072955a0fe0">getTempoSaida</a>();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="a00002.html#a00cb6606f92e0a5e74d95ce86c66b367">getTempoChegada</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="a00002.html#a90c7cecbe137527735fb4a90008ad0d3">getValorTotalCompras</a>();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="a00002.html#a8a3be2b4ce63f1f0c04d6ae5a71db657">TipoCliente</a> <a class="code" href="a00002.html#abab02599bfed5285df6fd043acec0b5b">getTipoCliente</a>();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="a00002.html#a8a3be2b4ce63f1f0c04d6ae5a71db657">TipoCliente</a> m_tipoCliente;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">bool</span> m_pagarComCheque; <span class="comment">//probabilidade de pagar com cheque é 20% randomizar no construtor(RC)</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">int</span> m_totalDeCompras; <span class="comment">//RC entre 2-100</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">double</span> m_valorTotalDosProdutos; <span class="comment">//RC entre 1 e 90, tamanho da lista dado pelo total de compras</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">int</span> m_tempoDeChegada;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">int</span> m_tempoDeSaidaDaFilaDoCaixa;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;};</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="ttc" id="a00002_html_a756b8f00c253d491b8a4cabaa3c1540b"><div class="ttname"><a href="a00002.html#a756b8f00c253d491b8a4cabaa3c1540b">Cliente::getNumeroDeProdutos</a></div><div class="ttdeci">int getNumeroDeProdutos()</div><div class="ttdef"><b>Definition:</b> Cliente.cpp:35</div></div>
+<div class="ttc" id="a00002_html_a6625b6a833a0e8b2f7959bc5344eb0be"><div class="ttname"><a href="a00002.html#a6625b6a833a0e8b2f7959bc5344eb0be">Cliente::Cliente</a></div><div class="ttdeci">Cliente(int tempoDeChegadaNoSupermercado)</div><div class="ttdef"><b>Definition:</b> Cliente.cpp:5</div></div>
+<div class="ttc" id="a00002_html_a00cb6606f92e0a5e74d95ce86c66b367"><div class="ttname"><a href="a00002.html#a00cb6606f92e0a5e74d95ce86c66b367">Cliente::getTempoChegada</a></div><div class="ttdeci">int getTempoChegada()</div><div class="ttdef"><b>Definition:</b> Cliente.cpp:55</div></div>
+<div class="ttc" id="a00002_html_a29d1d53394350c66363109e33c990b58"><div class="ttname"><a href="a00002.html#a29d1d53394350c66363109e33c990b58">Cliente::~Cliente</a></div><div class="ttdeci">~Cliente()</div><div class="ttdef"><b>Definition:</b> Cliente.cpp:31</div></div>
+<div class="ttc" id="a00002_html_a8a3be2b4ce63f1f0c04d6ae5a71db657a0e7a8fbf97e475f4fb92a09650c933e0"><div class="ttname"><a href="a00002.html#a8a3be2b4ce63f1f0c04d6ae5a71db657a0e7a8fbf97e475f4fb92a09650c933e0">Cliente::buscaFilaComMenosProdutos</a></div><div class="ttdef"><b>Definition:</b> Cliente.h:15</div></div>
+<div class="ttc" id="a00002_html_a8a3be2b4ce63f1f0c04d6ae5a71db657aaf1391199882e9e29292e6b7b2ff2b91"><div class="ttname"><a href="a00002.html#a8a3be2b4ce63f1f0c04d6ae5a71db657aaf1391199882e9e29292e6b7b2ff2b91">Cliente::buscaMenorFila</a></div><div class="ttdef"><b>Definition:</b> Cliente.h:14</div></div>
+<div class="ttc" id="a00002_html_a90c7cecbe137527735fb4a90008ad0d3"><div class="ttname"><a href="a00002.html#a90c7cecbe137527735fb4a90008ad0d3">Cliente::getValorTotalCompras</a></div><div class="ttdeci">double getValorTotalCompras()</div><div class="ttdef"><b>Definition:</b> Cliente.cpp:60</div></div>
+<div class="ttc" id="a00013_html"><div class="ttname"><a href="a00013.html">ListaCircular.hpp</a></div></div>
+<div class="ttc" id="a00002_html_a5a7d3685690926672a511a169e47e19e"><div class="ttname"><a href="a00002.html#a5a7d3685690926672a511a169e47e19e">Cliente::setTempoSaida</a></div><div class="ttdeci">void setTempoSaida(int tempoDeSaida)</div><div class="ttdef"><b>Definition:</b> Cliente.cpp:45</div></div>
+<div class="ttc" id="a00002_html_a8a3be2b4ce63f1f0c04d6ae5a71db657"><div class="ttname"><a href="a00002.html#a8a3be2b4ce63f1f0c04d6ae5a71db657">Cliente::TipoCliente</a></div><div class="ttdeci">TipoCliente</div><div class="ttdef"><b>Definition:</b> Cliente.h:12</div></div>
+<div class="ttc" id="a00002_html"><div class="ttname"><a href="a00002.html">Cliente</a></div><div class="ttdoc">Representa um cliente de supermercado. </div><div class="ttdef"><b>Definition:</b> Cliente.h:7</div></div>
+<div class="ttc" id="a00002_html_abab02599bfed5285df6fd043acec0b5b"><div class="ttname"><a href="a00002.html#abab02599bfed5285df6fd043acec0b5b">Cliente::getTipoCliente</a></div><div class="ttdeci">TipoCliente getTipoCliente()</div><div class="ttdef"><b>Definition:</b> Cliente.cpp:65</div></div>
+<div class="ttc" id="a00002_html_ac2d3ce2f3bd1871c050ed882465d77aa"><div class="ttname"><a href="a00002.html#ac2d3ce2f3bd1871c050ed882465d77aa">Cliente::vaiPagarComCheque</a></div><div class="ttdeci">bool vaiPagarComCheque()</div><div class="ttdef"><b>Definition:</b> Cliente.cpp:40</div></div>
+<div class="ttc" id="a00002_html_a43682e1d4ace198e91aa7072955a0fe0"><div class="ttname"><a href="a00002.html#a43682e1d4ace198e91aa7072955a0fe0">Cliente::getTempoSaida</a></div><div class="ttdeci">int getTempoSaida()</div><div class="ttdef"><b>Definition:</b> Cliente.cpp:50</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado em Domingo, 25 de Maio de 2014 16:38:27 para Supermercado BP por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.7
+</small></address>
+</body>
+</html>

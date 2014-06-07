@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.7"/>
+<title>Supermercado BP: Projeto</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Supermercado BP
+   </div>
+   <div id="projectbrief">Aqui nós pensamos em você!</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.7 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Localizar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li class="current"><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Ficheiros</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Localizar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tudo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Ficheiros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funções</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variáveis</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerações</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Valores da enumeração</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Páginas</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Projeto </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><h1><a class="anchor" id="intro_sec"></a>
+Instruções</h1>
+<p>O sistema modela e simula um <a class="el" href="class_supermercado.html" title="Responsável pelo armazenamento dos parametros de execução e por conter a lógica da aplicação  A funci...">Supermercado</a>. Fornecendo dados como o número de caixas empregados, assim como sua eficiência, e o tempo médio de chegada de novos clientes ao estabelecimento, o programa devolve estatísticas que permitem ao proprietário a cognição do número ideal de caixas para atender seus fregueses e os custos de operação de seu negócio, em função do faturamento gerado por cada um de seus funcionários.<br />
+ Ao iniciar o sistema, o usuário poderá escolher entre ler um arquivo que contém as informações de seu supermercado, ou digitá-las manualmente.<br />
+ Caso escolha ler um arquivo pré-existente, o nome do arquivo (incluindo extensão) deve ser digitado quando solicitado. É indispensável que o arquivo encontre-se na mesma pasta que o programa. Caso contrário ele não será encontrado. O sistema reconhece arquivos das extensões .dat e .txt.<br />
+ O arquivo de leitura deve estar configurado seguindo o formato da Figura 1. Qualquer linha pode ser utilizada para escrever um comentário, bastando inicia-la com o caractere #.<br />
+ Os seguintes dados devem ser digitados, um por linha, mantendo a ordem:</p><ul>
+<li>Nome do <a class="el" href="class_supermercado.html" title="Responsável pelo armazenamento dos parametros de execução e por conter a lógica da aplicação  A funci...">Supermercado</a>.</li>
+<li>Tempo desejado de simulação, em horas.</li>
+<li>Tempo médio da chegada de novos clientes, em segundos.</li>
+<li>Número de caixas empregados.</li>
+<li>Nas linhas subsequentes, os dados dos caixas devem ser fornecidos, um por linha, separando as informações existentes por espaços.</li>
+<li>Identificação (espaço) eficiência (espaço) salário.</li>
+<li>Em eficiência, deve-se digitar 1 (caixa eficiente), 2 (caixa médio) ou 3 (caixa ruim).</li>
+</ul>
+<div class="image">
+<img src="arquivo.png" alt="arquivo.png"/>
+</div>
+<p> <br />
+ Se os dados forem fornecidos corretamente, ou o arquivo de leitura esteja corretamente redigido, o programa deve rodar sem a existência de erros.<br />
+ Após o início da simulação, o programa gerará clientes a intervalos randômicos calculados com base na média do tempo de chegada fornecida. <br />
+ Cada cliente compra um número variável de produtos com preços variáveis. Os clientes podem procurar uma fila com um número menor de pessoas, ou uma fila onde haja um número menor de produtos. Caso o supermercado esteja muito cheio, ou seja, haja 10 ou mais pessoas em cada fila, o cliente abandona suas compras, e o valor referente a elas é calculado como faturamento que se deixou de obter. Na ocasião de desistência de um cliente, o sistema assume a necessidade da adição de um novo caixa. Este caixa, no entanto, possui custo em dobro, devido ao caráter de urgência.<br />
+ Ao final da execução, serão fornecidos detalhadamente os resultados da simulação, mostrando ao proprietário a contabilidade de seu negócio, possibilitando um melhor planejamento quanto ao número e quadro de funcionários.<br />
+<br />
+<br />
+<br />
+<br />
+</p>
+<h1><a class="anchor" id="diagram"></a>
+Diagrama UML</h1>
+<p><br />
+ </p><div class="image">
+<img src="SupermercadoPB.png" alt="SupermercadoPB.png"/>
+</div>
+ </div></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado em Domingo, 25 de Maio de 2014 20:03:01 para Supermercado BP por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.7
+</small></address>
+</body>
+</html>

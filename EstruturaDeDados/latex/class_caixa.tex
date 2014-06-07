@@ -1,0 +1,191 @@
+\hypertarget{class_caixa}{\section{Referência à classe Caixa}
+\label{class_caixa}\index{Caixa@{Caixa}}
+}
+
+
+Representa um caixa de supermercado.  
+
+
+
+
+{\ttfamily \#include $<$Caixa.\+h$>$}
+
+\subsection*{Tipos Públicos}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_caixa_a0e98d0cd8dc2ff4f73d637d73f7bbe85}{Eficiencia} \{ \hyperlink{class_caixa_a0e98d0cd8dc2ff4f73d637d73f7bbe85ac540cf6ebf89599c2551d4b9b03c48d7}{eficiente} = 1, 
+\hyperlink{class_caixa_a0e98d0cd8dc2ff4f73d637d73f7bbe85a44121dbf9c403365d0a090127e43a499}{medio} = 2, 
+\hyperlink{class_caixa_a0e98d0cd8dc2ff4f73d637d73f7bbe85ad22f3ab5e25a4b9e6c8f534a88a04c7a}{ruim} = 3
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Membros públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_caixa_aad38f50e3c8db674bb5c0ee521665d83}{Caixa} (std\+::string identificador, \hyperlink{class_caixa_a0e98d0cd8dc2ff4f73d637d73f7bbe85}{Eficiencia} desempenho, double salario\+Por\+Hora, bool sobrehora, int tempo\+Atual)
+\item 
+\hyperlink{class_caixa_a3c83a69e735b33cb42b90147bf94563e}{$\sim$\+Caixa} ()
+\item 
+void \hyperlink{class_caixa_a49d1c16baa5cba526d2fe483426d1ca7}{recebe\+Cliente} (\hyperlink{class_cliente}{Cliente} $\ast$cliente\+Adicionar, int tempo\+De\+Entrada\+Na\+Fila)
+\item 
+\hyperlink{class_cliente}{Cliente} $\ast$ \hyperlink{class_caixa_a05be1498241eb73750a857ec5b9a0ddf}{atende\+Cliente} (int tempo\+Atual\+Supermercado)
+\item 
+int \hyperlink{class_caixa_a4548bf9e0d9fe4639d85f525dfa284eb}{get\+Nro\+Clientes} ()
+\item 
+int \hyperlink{class_caixa_aab9109ad0b89fbce6048e6fb3e2f13c3}{get\+Nro\+Clientes\+Atendidos} ()
+\item 
+int \hyperlink{class_caixa_a07735848b240d260fcd573c7642fce60}{get\+Tempo\+Espera} ()
+\item 
+double \hyperlink{class_caixa_a2b903d4d0736ea35f09f7e5536fdd71d}{get\+Faturamento} ()
+\item 
+std\+::string \hyperlink{class_caixa_a6bc55188d8667812c23223bb19488fef}{get\+Identificador} ()
+\item 
+int \hyperlink{class_caixa_a7fea27e506f6a819c133c72c1bece67e}{get\+Desempenho} ()
+\item 
+int \hyperlink{class_caixa_ad84ab7878e10d3eeea3025a3594e66b7}{get\+Nro\+Produtos} ()
+\item 
+int \hyperlink{class_caixa_a05fe593cdbbd86a3633ac58edda520a7}{get\+Salario} ()
+\item 
+bool \hyperlink{class_caixa_a3f846659f43087a6963ecfb7b51f858c}{get\+Sobrehora} ()
+\item 
+int \hyperlink{class_caixa_a126611a1682a8720732b48da2759cfca}{get\+Tempo\+De\+Entrada} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Documentação das enumerações}
+\hypertarget{class_caixa_a0e98d0cd8dc2ff4f73d637d73f7bbe85}{\index{Caixa@{Caixa}!Eficiencia@{Eficiencia}}
+\index{Eficiencia@{Eficiencia}!Caixa@{Caixa}}
+\subsubsection[{Eficiencia}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Caixa\+::\+Eficiencia}}}\label{class_caixa_a0e98d0cd8dc2ff4f73d637d73f7bbe85}
+Representa a eficiencia de um caixa, sendo que esta afeta o tempo para se atender um cliente da seguinte forma\+:~\newline
+Tempo para atender cliente = quantidade de produtos multiplicado pelo tempo de digitação de cada item (em segundos) + tempo para receber o cheque (em segundos) \begin{Desc}
+\item[Valores da enumeração]\par
+\begin{description}
+\index{eficiente@{eficiente}!Caixa@{Caixa}}\index{Caixa@{Caixa}!eficiente@{eficiente}}\item[{\em 
+\hypertarget{class_caixa_a0e98d0cd8dc2ff4f73d637d73f7bbe85ac540cf6ebf89599c2551d4b9b03c48d7}{eficiente}\label{class_caixa_a0e98d0cd8dc2ff4f73d637d73f7bbe85ac540cf6ebf89599c2551d4b9b03c48d7}
+}]Tempo de digitação p/ produto = 1s , Tempo para receber cheque = 10s \index{medio@{medio}!Caixa@{Caixa}}\index{Caixa@{Caixa}!medio@{medio}}\item[{\em 
+\hypertarget{class_caixa_a0e98d0cd8dc2ff4f73d637d73f7bbe85a44121dbf9c403365d0a090127e43a499}{medio}\label{class_caixa_a0e98d0cd8dc2ff4f73d637d73f7bbe85a44121dbf9c403365d0a090127e43a499}
+}]Tempo de digitação p/ produto = 2s , Tempo para receber cheque = 25 \index{ruim@{ruim}!Caixa@{Caixa}}\index{Caixa@{Caixa}!ruim@{ruim}}\item[{\em 
+\hypertarget{class_caixa_a0e98d0cd8dc2ff4f73d637d73f7bbe85ad22f3ab5e25a4b9e6c8f534a88a04c7a}{ruim}\label{class_caixa_a0e98d0cd8dc2ff4f73d637d73f7bbe85ad22f3ab5e25a4b9e6c8f534a88a04c7a}
+}]Tempo de digitação p/ produto = 4s , Tempo para receber cheque = 60s \end{description}
+\end{Desc}
+
+
+\subsection{Documentação dos Construtores \& Destrutor}
+\hypertarget{class_caixa_aad38f50e3c8db674bb5c0ee521665d83}{\index{Caixa@{Caixa}!Caixa@{Caixa}}
+\index{Caixa@{Caixa}!Caixa@{Caixa}}
+\subsubsection[{Caixa}]{\setlength{\rightskip}{0pt plus 5cm}Caixa\+::\+Caixa (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{identificador, }
+\item[{{\bf Eficiencia}}]{desempenho, }
+\item[{double}]{salario\+Por\+Hora, }
+\item[{bool}]{sobrehora, }
+\item[{int}]{tempo\+Atual}
+\end{DoxyParamCaption}
+)}}\label{class_caixa_aad38f50e3c8db674bb5c0ee521665d83}
+
+\begin{DoxyParams}{Parâmetros}
+{\em sobrehora} & Indica se este é um caixa extra e portanto deve receber em dobro \\
+\hline
+{\em tempo\+Atual} & Tempo em que o caixa foi contratado \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_caixa_a3c83a69e735b33cb42b90147bf94563e}{\index{Caixa@{Caixa}!````~Caixa@{$\sim$\+Caixa}}
+\index{````~Caixa@{$\sim$\+Caixa}!Caixa@{Caixa}}
+\subsubsection[{$\sim$\+Caixa}]{\setlength{\rightskip}{0pt plus 5cm}Caixa\+::$\sim$\+Caixa (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_caixa_a3c83a69e735b33cb42b90147bf94563e}
+
+
+\subsection{Documentação dos métodos}
+\hypertarget{class_caixa_a05be1498241eb73750a857ec5b9a0ddf}{\index{Caixa@{Caixa}!atende\+Cliente@{atende\+Cliente}}
+\index{atende\+Cliente@{atende\+Cliente}!Caixa@{Caixa}}
+\subsubsection[{atende\+Cliente}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Cliente} $\ast$ Caixa\+::atende\+Cliente (
+\begin{DoxyParamCaption}
+\item[{int}]{tempo\+Atual\+Supermercado}
+\end{DoxyParamCaption}
+)}}\label{class_caixa_a05be1498241eb73750a857ec5b9a0ddf}
+Responsável por verificar se o cliente já pode ser atendido de acordo com a hora do supermercado \hypertarget{class_caixa_a7fea27e506f6a819c133c72c1bece67e}{\index{Caixa@{Caixa}!get\+Desempenho@{get\+Desempenho}}
+\index{get\+Desempenho@{get\+Desempenho}!Caixa@{Caixa}}
+\subsubsection[{get\+Desempenho}]{\setlength{\rightskip}{0pt plus 5cm}int Caixa\+::get\+Desempenho (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_caixa_a7fea27e506f6a819c133c72c1bece67e}
+Retorna qual o nível de eficiencia do caixa \hypertarget{class_caixa_a2b903d4d0736ea35f09f7e5536fdd71d}{\index{Caixa@{Caixa}!get\+Faturamento@{get\+Faturamento}}
+\index{get\+Faturamento@{get\+Faturamento}!Caixa@{Caixa}}
+\subsubsection[{get\+Faturamento}]{\setlength{\rightskip}{0pt plus 5cm}double Caixa\+::get\+Faturamento (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_caixa_a2b903d4d0736ea35f09f7e5536fdd71d}
+Retorna o faturamento total do caixa \hypertarget{class_caixa_a6bc55188d8667812c23223bb19488fef}{\index{Caixa@{Caixa}!get\+Identificador@{get\+Identificador}}
+\index{get\+Identificador@{get\+Identificador}!Caixa@{Caixa}}
+\subsubsection[{get\+Identificador}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Caixa\+::get\+Identificador (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_caixa_a6bc55188d8667812c23223bb19488fef}
+Retorna o identificado do caixa \hypertarget{class_caixa_a4548bf9e0d9fe4639d85f525dfa284eb}{\index{Caixa@{Caixa}!get\+Nro\+Clientes@{get\+Nro\+Clientes}}
+\index{get\+Nro\+Clientes@{get\+Nro\+Clientes}!Caixa@{Caixa}}
+\subsubsection[{get\+Nro\+Clientes}]{\setlength{\rightskip}{0pt plus 5cm}int Caixa\+::get\+Nro\+Clientes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_caixa_a4548bf9e0d9fe4639d85f525dfa284eb}
+Retorna o numero de clientes na fila \hypertarget{class_caixa_aab9109ad0b89fbce6048e6fb3e2f13c3}{\index{Caixa@{Caixa}!get\+Nro\+Clientes\+Atendidos@{get\+Nro\+Clientes\+Atendidos}}
+\index{get\+Nro\+Clientes\+Atendidos@{get\+Nro\+Clientes\+Atendidos}!Caixa@{Caixa}}
+\subsubsection[{get\+Nro\+Clientes\+Atendidos}]{\setlength{\rightskip}{0pt plus 5cm}int Caixa\+::get\+Nro\+Clientes\+Atendidos (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_caixa_aab9109ad0b89fbce6048e6fb3e2f13c3}
+Retorna o numero de clientes já atendidos \hypertarget{class_caixa_ad84ab7878e10d3eeea3025a3594e66b7}{\index{Caixa@{Caixa}!get\+Nro\+Produtos@{get\+Nro\+Produtos}}
+\index{get\+Nro\+Produtos@{get\+Nro\+Produtos}!Caixa@{Caixa}}
+\subsubsection[{get\+Nro\+Produtos}]{\setlength{\rightskip}{0pt plus 5cm}int Caixa\+::get\+Nro\+Produtos (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_caixa_ad84ab7878e10d3eeea3025a3594e66b7}
+Retorna a quantidade total de produtos a serem processados pelo caixa \hypertarget{class_caixa_a05fe593cdbbd86a3633ac58edda520a7}{\index{Caixa@{Caixa}!get\+Salario@{get\+Salario}}
+\index{get\+Salario@{get\+Salario}!Caixa@{Caixa}}
+\subsubsection[{get\+Salario}]{\setlength{\rightskip}{0pt plus 5cm}int Caixa\+::get\+Salario (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_caixa_a05fe593cdbbd86a3633ac58edda520a7}
+Retorna o salário do caixa \hypertarget{class_caixa_a3f846659f43087a6963ecfb7b51f858c}{\index{Caixa@{Caixa}!get\+Sobrehora@{get\+Sobrehora}}
+\index{get\+Sobrehora@{get\+Sobrehora}!Caixa@{Caixa}}
+\subsubsection[{get\+Sobrehora}]{\setlength{\rightskip}{0pt plus 5cm}bool Caixa\+::get\+Sobrehora (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_caixa_a3f846659f43087a6963ecfb7b51f858c}
+Retorna se o caixa é extra ou não \hypertarget{class_caixa_a126611a1682a8720732b48da2759cfca}{\index{Caixa@{Caixa}!get\+Tempo\+De\+Entrada@{get\+Tempo\+De\+Entrada}}
+\index{get\+Tempo\+De\+Entrada@{get\+Tempo\+De\+Entrada}!Caixa@{Caixa}}
+\subsubsection[{get\+Tempo\+De\+Entrada}]{\setlength{\rightskip}{0pt plus 5cm}int Caixa\+::get\+Tempo\+De\+Entrada (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_caixa_a126611a1682a8720732b48da2759cfca}
+Retorna o tempo de contratação do caixa \hypertarget{class_caixa_a07735848b240d260fcd573c7642fce60}{\index{Caixa@{Caixa}!get\+Tempo\+Espera@{get\+Tempo\+Espera}}
+\index{get\+Tempo\+Espera@{get\+Tempo\+Espera}!Caixa@{Caixa}}
+\subsubsection[{get\+Tempo\+Espera}]{\setlength{\rightskip}{0pt plus 5cm}int Caixa\+::get\+Tempo\+Espera (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_caixa_a07735848b240d260fcd573c7642fce60}
+Retorna o tempo médio de espera na fila do caixa \hypertarget{class_caixa_a49d1c16baa5cba526d2fe483426d1ca7}{\index{Caixa@{Caixa}!recebe\+Cliente@{recebe\+Cliente}}
+\index{recebe\+Cliente@{recebe\+Cliente}!Caixa@{Caixa}}
+\subsubsection[{recebe\+Cliente}]{\setlength{\rightskip}{0pt plus 5cm}void Caixa\+::recebe\+Cliente (
+\begin{DoxyParamCaption}
+\item[{{\bf Cliente} $\ast$}]{cliente\+Adicionar, }
+\item[{int}]{tempo\+De\+Entrada\+Na\+Fila}
+\end{DoxyParamCaption}
+)}}\label{class_caixa_a49d1c16baa5cba526d2fe483426d1ca7}
+Responsável por adicionar um cliente na fila do caixa e calcular em qual \char`\"{}horário\char`\"{} este será atendido 
+
+A documentação para esta classe foi gerada a partir dos seguintes ficheiros\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_caixa_8h}{Caixa.\+h}\item 
+\hyperlink{_caixa_8cpp}{Caixa.\+cpp}\end{DoxyCompactItemize}

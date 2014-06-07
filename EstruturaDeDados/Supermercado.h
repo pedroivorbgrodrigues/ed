@@ -1,21 +1,32 @@
 #pragma once
 #include "Caixa.h"
 #include "ListaCircular.hpp"
-
+/**
+*@brief  Responsável pelo armazenamento dos parametros de execução e por conter a lógica da aplicação\n
+* A funcionalidade relacionada com a desistencia de compra pelos clientes não está ocorrendo devido ao parametro padrão definido nos requisitos do projeto ser mutualmente exclusivo com a contratação de novos caixas.
+*/
 class Supermercado
 {
 public:
+	/**
+	*@param tamanhoMaximoDasFilasParaDesistir Quando todos os caixas estiverem com esse numero de clientes na fila e um novo cliente chegar este desiste da compra.
+	*/
 	Supermercado(std::string nomeDoSupermercado,
 		ListaCircular<std::string> *identificadoresDosCaixas,
-		ListaCircular<Eficiencia> *eficienciaDosCaixas,
+		ListaCircular<Caixa::Eficiencia> *eficienciaDosCaixas,
 		ListaCircular<double> *salariosDosCaixas,
 		int tempoMedioEmSegundosDeChegadaDeNovosClientes,
 		int tempoTotalDeSimulacaoEmHoras,
 		int tamanhoMaximoDasFilasParaDesistir);
+	/**
+	* Construtor que recebe o arquivo de configuração de onde os parametros serão extraidos
+	*/
 	Supermercado(std::string caminhoArquivoConfiguracao);
 	~Supermercado(void);
-	void rodarSimulacao();
-	void CalcularEstatisticas();
+	/**
+	*  Método principal responsável por simular o funcionamento do Supermercado e apresentar as estatísticas no final da execução
+	*/
+	void rodarSimulacao();	
 private:
 	std::string m_NomeDoSupermercado;
 	ListaCircular<Caixa> m_listaDeCaixas;
@@ -25,21 +36,8 @@ private:
 	int m_tempoDeChegadaDoProximoCliente;
 	int m_tempoMedioEmSegundosDeChegadaDeNovosClientes;
 	int m_tempoTotalDeSimulacaoEmHoras;
-	ListaCircular<Cliente> m_clientesAtendidos;
 	void gerarCliente(bool caixasCheios);
 	void buscarMenorFila(Cliente *novo);
 	void buscarFilaComMenosProdutos(Cliente *novo);
+	void CalcularEstatisticas();
 };
-/*
-Gerar valores aleatorios com distribuição uniforme no intervalo 0 a 1, utilize as funções rand e srand.
-Lembre-se de inicializar o sempre gerador de numeros aleatorios, antes de usar, para garantir de que sejam usados valores diferentes em cada simulação.
-Para gerar um numero entre 0 e 1, voce precisa dividir o valor gerado por RAND_MAX, definido em stdlib.h.
-Para gerar um numero aleatorio com distribuição uniforme em um intervalo, pegue este resultado, multiplique pelo tamanho do intervalo 
-e adicione a valor do limite inferior do intervalo. 
-
-Por exemplo: para gerar um valor aleatorio de compras entre 2 e 100, 
-você pega o tamanho do intervalo, que é de 2 a 100 inclusive, logo 99 valores, 
-e multiplica o seu numero aleatorio de 0 a 1 por 99. 
-A seguir adiciona o limite inferior do intervalo, 2, ao resultado. 
-Para que voce possa usar este numero ainda falta truncar, pegando so a parte inteira. Para isto basta fazer um typecasting: inteiro = (int) real;
-*/

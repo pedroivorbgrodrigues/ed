@@ -1,20 +1,49 @@
 #pragma once
 #include "ListaCircular.hpp"
 
-enum TipoCliente {
-	buscaMenorFila, buscaFilaComMenosProdutos
-};
-
+/**
+*@brief  Representa um cliente de supermercado
+*/
 class Cliente {
 public:
-	Cliente(int tempoAtual);
+	/**
+	*  Representa o modo como o cliente escolherá o caixa em que quer ser atendido
+	*/
+	enum TipoCliente 
+	{
+		buscaMenorFila, 
+		buscaFilaComMenosProdutos
+	};
+
+	Cliente(int tempoDeChegadaNoSupermercado);
 	~Cliente();
+	/**
+	*  Retorna o numero de produtos comprados pelo clientes
+	*/
 	int getNumeroDeProdutos();
+	/**
+	*  Indica se o cliente irá pagar com cheque
+	*/
 	bool vaiPagarComCheque();
+	/**
+	*  Defini o "horário" em que o caixa atenderá o cliente
+	*/
 	void setTempoSaida(int tempoDeSaida);
+	/**
+	*  Retorna o "horário" em que o caixa atenderá o cliente
+	*/
 	int getTempoSaida();
+	/**
+	*  Retorna o "horário" em que o cliente chegou no supermercado
+	*/
 	int getTempoChegada();
+	/**
+	*  Retorna o valor total da compra do cliente
+	*/
 	double getValorTotalCompras();
+	/**
+	*  Retorna o tipo de cliente, se ele bsuca pela menor fila ou a fila com menos produtos
+	*/
 	TipoCliente getTipoCliente();
 private:
 	TipoCliente m_tipoCliente;

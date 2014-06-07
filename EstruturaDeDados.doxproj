@@ -1,0 +1,4 @@
+<DoxygenConfig Version="2">
+  <DoxHtmlPath>EDGit</DoxHtmlPath>
+  <UseFrames>False</UseFrames>
+</DoxygenConfig>
