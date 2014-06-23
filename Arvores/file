@@ -1,0 +1,9 @@
+set term pngcairo
+set output 'comparacaoArvores.png'
+set title "Diferenca entre tempos de insercao da arvore"
+set xlabel "Quantidade de nodos na arvore"
+set ylabel "microsegundos"
+plot "avl.dat" title 'avl' with lines, \
+"redblack.dat" title 'redblack' with lines
+set term windows
+replot
